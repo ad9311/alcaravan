@@ -10,6 +10,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  role                   :integer          default(0), not null
 #  username               :string           not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -31,4 +32,9 @@ class User < ApplicationRecord
   has_one :course_student, dependent: :destroy
   has_one :course_teacher, dependent: :destroy
   has_many :question_answers, dependent: :destroy
+
+  enum role: {
+    student: 0,
+    teacher: 1
+  }
 end

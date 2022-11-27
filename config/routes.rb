@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'dasboard#index'
+  root 'dashboard#index'
 
-  resources :dasboard, only: %i[index]
+  resources :dashboard, only: %i[index]
 
   devise_for :users
 end
