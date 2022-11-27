@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_27_222602) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_27_225053) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,29 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_27_222602) do
     t.index ["course_id"], name: "index_levels_on_course_id"
   end
 
+  create_table "question_answers", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.bigint "user_id", null: false
+    t.string "answer", null: false
+    t.datetime "answered_at", default: "2022-11-27 22:52:00", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_question_answers_on_question_id"
+    t.index ["user_id"], name: "index_question_answers_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.bigint "level_id", null: false
+    t.string "text", null: false
+    t.string "correct_answer", null: false
+    t.jsonb "options", null: false
+    t.string "code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_questions_on_code", unique: true
+    t.index ["level_id"], name: "index_questions_on_level_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -76,4 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_27_222602) do
   add_foreign_key "course_teachers", "courses"
   add_foreign_key "course_teachers", "users"
   add_foreign_key "levels", "courses"
+  add_foreign_key "question_answers", "questions"
+  add_foreign_key "question_answers", "users"
+  add_foreign_key "questions", "levels"
 end

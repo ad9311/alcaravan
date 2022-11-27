@@ -28,4 +28,6 @@ class Level < ApplicationRecord
   validates :video_url, :video_source, presence: true
 
   belongs_to :course
+
+  has_many :questions, dependent: :destroy
 end

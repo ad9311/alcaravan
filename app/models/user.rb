@@ -30,4 +30,5 @@ class User < ApplicationRecord
 
   has_one :course_student, dependent: :destroy
   has_one :course_teacher, dependent: :destroy
+  has_many :question_answers, dependent: :destroy
 end
