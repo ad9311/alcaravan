@@ -1,0 +1,55 @@
+# The behavior of RuboCop can be controlled via the .rubocop.yml
+# configuration file. It makes it possible to enable/disable
+# certain cops (checks) and to alter their behavior if they accept
+# any parameters. The file can be placed either in your home
+# directory or in some project directory.
+#
+# RuboCop will start looking for the configuration file in the directory
+# where the inspected file is and continue its way up to the root directory.
+#
+# See https://docs.rubocop.org/rubocop/configuration
+
+require: rubocop-rails
+AllCops:
+  TargetRubyVersion: 3.1
+  NewCops: enable
+  Exclude:
+    - "db/**/*"
+    - "bin/*" 
+    - "config/**/*"
+    - "lib/tasks/auto_annotate_models.rake"
+    - "Guardfile"
+    - "Rakefile"
+    - "node_modules/**/*"
+
+  DisplayCopNames: true
+
+Metrics/MethodLength:
+  Include:
+    - "app/controllers/*"
+    - "app/models/*"
+  Max: 20
+Metrics/AbcSize:
+  Include:
+    - "app/controllers/*"
+    - "app/models/*"
+  Max: 50
+Metrics/ClassLength:
+  Max: 150
+Metrics/BlockLength:
+  Max: 30
+
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+
+Layout/ExtraSpacing:
+  AllowForAlignment: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+Layout/LineLength:
+  Max: 120
