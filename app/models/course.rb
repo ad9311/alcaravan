@@ -17,4 +17,6 @@ class Course < ApplicationRecord
   validates :name, presence: true
 
   has_many :levels, dependent: :destroy
+  has_many :course_students, dependent: :destroy
+  has_many :course_teachers, dependent: :destroy
 end
