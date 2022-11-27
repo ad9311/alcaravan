@@ -16,5 +16,5 @@ class Course < ApplicationRecord
   validates :code, uniqueness: true
   validates :name, presence: true
 
-  has_many :levels
+  has_many :levels, dependent: :destroy
 end

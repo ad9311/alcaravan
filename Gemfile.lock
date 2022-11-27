@@ -87,9 +87,24 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.11.0)
+    erubis (2.7.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    haml (6.0.12)
+      temple (>= 0.8.2)
+      thor
+      tilt
+    haml-rails (2.1.0)
+      actionpack (>= 5.1)
+      activesupport (>= 5.1)
+      haml (>= 4.0.6)
+      railties (>= 5.1)
     hirb (0.7.3)
+    html2haml (2.3.0)
+      erubis (~> 2.7.0)
+      haml (>= 4.0)
+      nokogiri (>= 1.6.0)
+      ruby_parser (~> 3.5)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -186,6 +201,9 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
     ruby-progressbar (1.11.0)
+    ruby_parser (3.19.1)
+      sexp_processor (~> 4.16)
+    sexp_processor (4.16.1)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -197,7 +215,9 @@ GEM
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.21-x86_64-linux)
       railties (>= 6.0.0)
+    temple (0.9.1)
     thor (1.2.1)
+    tilt (2.0.11)
     timeout (0.3.0)
     turbo-rails (1.3.2)
       actionpack (>= 6.0.0)
@@ -226,7 +246,9 @@ DEPENDENCIES
   bootsnap
   debug
   devise
+  haml-rails
   hirb
+  html2haml
   importmap-rails
   jbuilder
   pg (~> 1.1)

@@ -54,6 +54,10 @@ gem 'bootsnap', require: false
 # Use devise for user authentication
 gem 'devise'
 
+# Use haml for displaying views
+gem 'haml-rails'
+gem 'html2haml'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
