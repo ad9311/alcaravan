@@ -23,6 +23,6 @@ class StudentsController < ApplicationController
         lowquality: true,
         encoding: 'utf8'
       end
-  end
+    end
   end
 end

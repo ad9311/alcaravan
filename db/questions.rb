@@ -3,7 +3,7 @@ Question.destroy_all
 #questions for quinto level 1
 
 Question.create(
-  code: 'P1',
+  code: 'Q1L1C5',
   correct_answer: 'b',
   options: {
     'a' => 'Ocurre en este instante.',
@@ -12,11 +12,11 @@ Question.create(
     'd' => 'Ocurrirá luego.'
   },
   text: 'Según el texto, ¿en qué momento ocurre la historia?',
-  level: Level.find_by(code: 'QL1')
+  level: Level.find_by(code: 'L1C5')
 )
 
 Question.create(
-  code: 'P2',
+  code: 'Q2L1C5',
   correct_answer: 'c',
   options: {
     'a' => "<div><span>Primero:</span><span>Enterró a un sapo y una gallina negra</span></div><div><span>Luego:</span><span>Se hizo millonario</span></div><div><span>Finalmente:</span><span>Ofreció al diablo su alma y la de su familia</span></div>",
@@ -25,11 +25,11 @@ Question.create(
     'd' => "<div><span>Primero:</span><span>Ofreció al diablo su alma y la de su familia</span></div><div><span>Luego:</span><span>Se hizo millonario</span></div><div><span>Finalmente:</span><span>Enterró a un sapo y una gallina negra</span></div>"
   },
   text: '¿Cuál es el orden en que suceden las acciones antes de que Juan Machete perdiera todo su ganado y a su familia?',
-  level: Level.find_by(code: 'QL1')
+  level: Level.find_by(code: 'L1C5')
 )
 
 Question.create(
-  code: 'P3',
+  code: 'Q3L1C5',
   correct_answer: 'd',
   options: {
     'a' => 'El diablo',
@@ -38,11 +38,11 @@ Question.create(
     'd' => 'Juan Machete'
   },
   text: '¿Quién es el personaje principal de la historia anterior?',
-  level: Level.find_by(code: 'QL1')
+  level: Level.find_by(code: 'L1C5')
 )
 
 Question.create(
-  code: 'P4',
+  code: 'Q4L1C5',
   correct_answer: 'b',
   options: {
     'a' => 'El toro',
@@ -51,11 +51,11 @@ Question.create(
     'd' => 'La esposa'
   },
   text: 'En la historia, ¿quién dice “que a su hacienda llegarían unos trabajadores que debía contratar” ',
-  level: Level.find_by(code: 'QL1')
+  level: Level.find_by(code: 'L1C5')
 )
 
 Question.create(
-  code: 'P5',
+  code: 'Q5L1C5',
   correct_answer: 'a',
   options: {
     'a' => 'Sepultó',
@@ -64,13 +64,13 @@ Question.create(
     'd' => 'Aplanó'
   },
   text: 'Lee el siguiente fragmento del texto: “tomo un sapo y una gallina negra y les cosió los ojos y los enterró vivos a la media noche de un jueves santo” ¿Cuál de las siguientes palabras significa lo mismo que la palabra “enterró”?',
-  level: Level.find_by(code: 'QL1')
+  level: Level.find_by(code: 'L1C5')
 )
 
 #questions for quinto level 2
 
 Question.create(
-  code: 'P6',
+  code: 'Q1L2C5',
   correct_answer: 'c',
   options: {
     'a' => 'Que las tripas hacen parte del corazón',
@@ -79,11 +79,11 @@ Question.create(
     'd' => 'Cuando se come se llena la tripa'
   },
   text: '¿A qué se refiere el autor cuando usa la frase “Tu decías que en tripa llena Vive el corazón contento” ',
-  level: Level.find_by(code: 'QL2')
+  level: Level.find_by(code: 'L2C5')
 )
 
 Question.create(
-  code: 'P7',
+  code: 'Q2L2C5',
   correct_answer: 'c',
   options: {
     'a' => 'Que se arrepiente de lo vivido',
@@ -92,11 +92,11 @@ Question.create(
     'd' => 'que andaría descalzo y corriendo por un alimento'
   },
   text: "<span>Lee la siguiente estrofa de la cancion</span><span>Si hubiese alguna manera</span><span>De retroceder el tiempo</span><span>Madre y si tú me mandaras</span><span>De nuevo a que nos prestaran</span><span>Algo para el alimento,</span><span>Te lo juro madre mía</span><span>Preciso en este momento,</span><span>Me veo corriendo descalzo</span><span>Sin camisa contra el viento</span><span>¿Qué se puede concluir de este párrafo?</span>",
-  level: Level.find_by(code: 'QL2')
+  level: Level.find_by(code: 'L2C5')
 )
 
 Question.create(
-  code: 'P8',
+  code: 'Q3L2C5',
   correct_answer: 'd',
   options: {
     'a' => 'A su vecina',
@@ -105,11 +105,11 @@ Question.create(
     'd' => 'Al a madre del autor'
   },
   text: 'De acuerdo al contenido de la historia, ¿a quién va dirigida esta cancion?',
-  level: Level.find_by(code: 'QL2')
+  level: Level.find_by(code: 'L2C5')
 )
 
 Question.create(
-  code: 'P9',
+  code: 'Q4L2C5',
   correct_answer: 'a',
   options: {
     'a' => 'Para agregar información a una enumeración.',
@@ -118,11 +118,11 @@ Question.create(
     'd' => 'Para introducir un concepto.'
   },
   text: 'Lee el siguiente enunciado del texto: “Que nos perdone el pereque y se dista de paciencia”. ¿Para qué se usa la palabra “y”?',
-  level: Level.find_by(code: 'QL2')
+  level: Level.find_by(code: 'L2C5')
 )
 
 Question.create(
-  code: 'P10',
+  code: 'Q5L2C5',
   correct_answer: 'b',
   options: {
     'a' => 'Los vecinos se deben ayudar entre si',
@@ -131,13 +131,13 @@ Question.create(
     'd' => 'Las madres del campo tienen problemas con sus hijos'
   },
   text: '¿Cuál de las siguientes opciones recoge la idea general del texto?',
-  level: Level.find_by(code: 'QL2')
+  level: Level.find_by(code: 'L2C5')
 )
 
 #questions for quinto level 3
 
 Question.create(
-  code: 'P11',
+  code: 'Q1L3C5',
   correct_answer: 'c',
   options: {
     'a' => 'Recostarse en la cama',
@@ -146,11 +146,11 @@ Question.create(
     'd' => 'Acudir a la escuela'
   },
   text: 'Según la información que se presentan en el afiche ¿Qué se debe hacer si se presentan los síntomas?',
-  level: Level.find_by(code: 'QL3')
+  level: Level.find_by(code: 'L3C5')
 )
 
 Question.create(
-  code: 'P12',
+  code: 'Q2L3C5',
   correct_answer: 'a',
   options: {
     'a' => 'La imagen explica las acciones mencionadas en el texto',
@@ -159,11 +159,11 @@ Question.create(
     'd' => 'El texto critica las acciones que se señalan en la imagen'
   },
   text: "<span>Observa la imagen y lee el texto que la acompaña</span><img src='#' alt='image' /><span>¿Cuál de las siguientes opciones describe la relación entre la imagen anterior y el texto que lo acompaña?</span>",
-  level: Level.find_by(code: 'QL3')
+  level: Level.find_by(code: 'L3C5')
 )
 
 Question.create(
-  code: 'P13',
+  code: 'Q3L3C5',
   correct_answer: 'b',
   options: {
     'a' => 'El dengue es una enfermedad común',
@@ -172,11 +172,11 @@ Question.create(
     'd' => 'El dengue se puede prevenir'
   },
   text: '¿Qué se puede concluir de la información que brinda el afiche sobre el dengue?',
-  level: Level.find_by(code: 'QL3')
+  level: Level.find_by(code: 'L3C5')
 )
 
 Question.create(
-  code: 'P14',
+  code: 'Q4L3C5',
   correct_answer: 'b',
   options: {
     'a' => 'Presenta en qué casos ocurre y cómo actuar en una urgencia.',
@@ -185,11 +185,11 @@ Question.create(
     'd' => 'Indica qué hacer para atender los síntomas y presenta ejemplos.'
   },
   text: '¿Qué estrategia se utiliza en el afiche para explicar que el dengue puede ser mortal?',
-  level: Level.find_by(code: 'QL3')
+  level: Level.find_by(code: 'L3C5')
 )
 
 Question.create(
-  code: 'P15',
+  code: 'Q5L3C5',
   correct_answer: 'd',
   options: {
     'a' => 'Los hospitales',
@@ -198,12 +198,12 @@ Question.create(
     'd' => 'El zancudo'
   },
   text: 'Según la información del afiche ¿Quién es el responsable de transmitir el dengue?',
-  level: Level.find_by(code: 'QL3')
+  level: Level.find_by(code: 'L3C5')
 )
 
 # questions for level 4
 Question.create(
-  code: 'P16',
+  code: 'Q1L4C5',
   correct_answer: 'd',
   options: {
     'a' => 'Señalar las intervenciones en un diálogo.',
@@ -212,11 +212,11 @@ Question.create(
     'd' => 'Resaltar el significado de una expresión.'
   },
   text: 'En el primer párrafo del texto, ¿para qué se emplean los paréntesis ()?',
-  level: Level.find_by(code: 'QL4')
+  level: Level.find_by(code: 'L4C5')
 )
 
 Question.create(
-  code: 'P17',
+  code: 'Q2L4C5',
   correct_answer: 'd',
   options: {
     'a' => 'Presentar una opinión acerca del tema.',
@@ -225,11 +225,11 @@ Question.create(
     'd' => 'Informar al lector sobre lo difícil que era adquirir el cacao en la antigüedad.'
   },
   text: '¿Cuál es la función del último párrafo del texto?',
-  level: Level.find_by(code: 'QL4')
+  level: Level.find_by(code: 'L4C5')
 )
 
 Question.create(
-  code: 'P18',
+  code: 'Q3L4C5',
   correct_answer: 'a',
   options: {
     'a' => 'Personas interesadas en la historia del chocolate',
@@ -238,11 +238,11 @@ Question.create(
     'd' => 'Interesados en la fabricación del chocolate'
   },
   text: 'Teniendo en cuenta el contenido ¿a quien va dirigido principalmente el texto?',
-  level: Level.find_by(code: 'QL4')
+  level: Level.find_by(code: 'L4C5')
 )
 
 Question.create(
-  code: 'P19',
+  code: 'Q4L4C5',
   correct_answer: 'c',
   options: {
     'a' => 'Narrativo',
@@ -251,11 +251,11 @@ Question.create(
     'd' => 'Lirico'
   },
   text: 'Según las características del texto leído, se puede decir que es un texto:',
-  level: Level.find_by(code: 'QL4')
+  level: Level.find_by(code: 'L4C5')
 )
 
 Question.create(
-  code: 'P20',
+  code: 'Q5L4C5',
   correct_answer: 'b',
   options: {
     'a' => 'Liquido',
@@ -264,7 +264,7 @@ Question.create(
     'd' => 'Jarabe'
   },
   text: 'Lee el siguiente enunciado del texto: “Fueron los mayas los que crearon un brebaje amargo llamado "chocolha" hecho de semillas de cacao” Un sinónimo de la palabra resaltada en el enunciado es:',
-  level: Level.find_by(code: 'QL4')
+  level: Level.find_by(code: 'L4C5')
 )
 
 
