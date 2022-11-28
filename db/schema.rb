@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_27_233131) do
     t.bigint "question_id", null: false
     t.bigint "user_id", null: false
     t.string "answer", null: false
-    t.datetime "answered_at", default: "2022-11-28 00:17:01", null: false
+    t.datetime "answered_at", default: "2022-11-28 03:22:22", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_question_answers_on_question_id"

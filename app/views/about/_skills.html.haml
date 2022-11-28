@@ -16,5 +16,5 @@
       %p= t("about.quality_references.course_2.bullet_#{i}")
 
 .mt-5
-  = button_to "Atrás", about_paginate_path(page: "justification")
-  = button_to "Siguiente", about_paginate_path(page: "authors")
+  = button_to "Atrás", about_paginate_path(page: "justification"), class: "btn-secondary"
+  = button_to "Siguiente", about_paginate_path(page: "authors"), class: "btn-primary"

@@ -7,6 +7,9 @@
   .btn-primary {
     @apply py-2 px-4 bg-primary;
   }
+  .btn-secondary {
+    @apply py-2 px-4 bg-secondary;
+  }
   .card {
     @apply px-8 h-full relative rounded-xl bg-white r-shadow;
   }

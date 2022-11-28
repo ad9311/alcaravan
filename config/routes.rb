@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'dashboard#index'
+  root 'about#index'
 
   # Dashboard
   resources :dashboard, only: %i[index]
