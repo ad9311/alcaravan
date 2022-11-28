@@ -1,0 +1,12 @@
+= turbo_stream.update "presentations" do
+  - case @page
+  - when "presentation"
+    = render "presentation"
+  - when "justification"
+    = render "justification"
+  - when "skills"
+    = render "skills"
+  - when "authors"
+    = render "authors"
+  - else
+    = render "presentation"

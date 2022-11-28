@@ -1,0 +1,56 @@
+es:
+  test: "¡Hola mundo!"
+  presentations:
+    presentation:
+      title: "Presentación"
+      welcome_message: "Bienvenido amiguito a tu libro interactivo multimedia “El Alcaraván” donde podrás conocer sobre el ave Alcaraván, un ave representativa de nuestro departamento Arauca."
+    justification:
+      title: "Justificación"
+      parragraph_0: "El presente libro interactivo multimedia dirigido a estudiantes de los grados tercero y quinto de primaria y a docentes de estos grados, busca ser una herramienta que contribuya al fortalecimiento de la comprensión lectora en sus diferentes niveles: critica, inferencial y literal. El LIM “El Alcaraván” pretende ser un recurso educativo digital que esté al alcance de todos con un fácil acceso, donde se fortalecerán las competencias comunicativas a través de lecturas y preguntas de opción múltiple con única respuesta."
+      parragraph_1: "El diseño de las preguntas de cada texto que presenta este recurso, tiene como propósito contribuir a la eficacia del proceso lector. Para esto se tomó en cuenta los referentes de calidad partiendo de los estándares básicos de competencia y las competencias lectoras."
+      parragraph_2: "Para el desarrollo de este Libro interactivo multimedia se tomó en cuenta una prueba diagnóstica realizada a un grupo de estudiantes de los grados tercero y quinto; de los resultados obtenidos en este diagnóstico, se tomaron como punto de partida para la formulación de cada una de las preguntas que conforman los textos."
+      parragraph_3: "La animación del LIM “El Alcaraván” está basado en la cultura del departamento de Arauca, puesto que el llanero se distingue por el orgullo hacia su región y costumbres. Gracias a la biodiversidad que posee esta región se tomaron ciertas lecturas, afiches, canciones y videos que representan el sentir de la cultura llanera. En cuanto a la fauna de la región es muy diversa y en ella encontramos gran variedad de aves, una de estas aves representativas es el alcaraván, con la interacción del recurso los usuarios podrán conocer más sobre la vida de esta especie."
+    quality_references:
+      title: "¿Qué desea evaluar este recurso?"
+      parragraph_1: "La competencia lectora y sus tres procesos básicos inferencial, literal y crítico. Donde se pueda medir la capacidad de reconocimiento que tienen los usuarios para identificar el tema, la intención y el significado implícito que tiene un texto. Los textos usados para diseñar las preguntas tendrán en cuenta factores como la secuencia predominante (narrativa, descriptiva, dialógica, explicativa y argumentativa)"
+      course_1:
+        title: "Estándares de competencias básicas evaluados grado tercero:"
+        bullet_0: "Elaboro resúmenes y esquemas que dan cuenta del sentido de un texto."
+        bullet_1: "Describo eventos de manera secuencial."
+        bullet_2: "Elaboro hipótesis acerca del sentido global de los textos, antes y durante el proceso de lectura; para el efecto, me apoyo en mis conocimientos previos, las imágenes y los títulos."
+        bullet_3: "Identifico el propósito comunicativo y la idea global de un texto."
+        bullet_4: "Reconozco los principales elementos constitutivos de un proceso de comunicación: interlocutores, código, canal, texto y situación comunicativa."
+        bullet_5: "Identifico la intención comunicativa de cada uno de los textos leídos."
+        bullet_6: "Comprendo los aspectos formales y conceptuales (en especial: características de las oraciones y formas de relación entre ellas), al interior de cada texto leído."
+        bullet_7: "Leo diferentes clases de textos: manuales, tarjetas, afiches, cartas, periódicos, etc."
+        bullet_8: "Elaboro instrucciones que evidencian secuencias lógicas en la realización de acciones."
+        bullet_9: "Comprendo los aspectos formales y conceptuales en especial, características de las oraciones y formas de relación entre ellas."
+      course_2:
+        title: "Estándares de competencias básicas evaluados grado quinto:"
+        bullet_0: "Leo diversos tipos de texto: descriptivo, informativo, narrativo, explicativo y argumentativo."
+        bullet_1: "Reconozco, en los textos literarios que leo, elementos tales como tiempo, espacio, acción, personajes."
+        bullet_2: "Leo diversos tipos de texto literario: relatos mitológicos, leyendas, cuentos, fábulas, poemas y obras teatrales."
+        bullet_3: "Elaboro resúmenes y esquemas que dan cuenta del sentido de un texto."
+        bullet_4: "Identifico maneras de cómo se formula el inicio y el final de algunas narraciones."
+        bullet_5: "Leo obras literarias de género narrativo, lírico y dramático, de diversa temática, época y región."
+        bullet_6: "Comprendo elementos constitutivos de obras literarias, tales como tiempo, espacio, función de los personajes, lenguaje, atmósferas, diálogos, escenas, entre otros."
+        bullet_7: "Reconozco las características de los principales medios de comunicación masiva."
+        bullet_8: "Identifico la intención comunicativa de cada uno de los textos leídos."
+        bullet_9: "Comprendo los aspectos formales y conceptuales en especial, características de las oraciones y formas de relación entre ellas."
+    authors:
+      author_1:
+        name: "Mónica Liliana Blum Suárez"
+        ba: "Licenciada en Pedagogía infantil de la Universidad de Pamplona"
+        ma: "Maestrante en Tic para la educación de Universidad de Investigación y Desarrollo UDI"
+        position: "Docente de aula multigrado de primaria en el Centro Educativo Alto Citaca. Saravena, Arauca"
+        experience: "8 años de experiencia educativa"
+        email: "monicablum01@hotmail.com"
+        contact_number: "Celular y WhatsApp 3104788407"
+      author_2:
+        name: "Luisa Fernanda Blum Suárez"
+        ba: "Licenciada en Pedagogía infantil de la Universidad de Pamplona"
+        ma: "Maestrante en Tic para la educación de Universidad de Investigación y Desarrollo UDI"
+        position: "Docente de aula multigrado de primaria en el Centro Educativo Luis Antonio Calvo. Saravena Arauca"
+        experience: "8 años de experiencia educativa"
+        email: "fernandablum1123@hotmail.com"
+        contact_number: "Celular y WhatsApp 3202682011"
