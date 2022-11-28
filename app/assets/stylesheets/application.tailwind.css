@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
 
 @layer components {
   .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+    @apply py-2 px-4 bg-primary;
+  }
+  .card {
+    @apply px-8 h-full relative rounded-xl bg-white r-shadow;
+  }
+
+  .card-header {
+    @apply mb-5 text-nuetral-3 font-bold text-xl;
+  }
+
+  .r-shadow {
+    box-shadow: 0 0 0.5rem 0.25rem rgb(224, 224, 224);
   }
 }
-
-*/

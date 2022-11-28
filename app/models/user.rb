@@ -37,4 +37,28 @@ class User < ApplicationRecord
     student: 0,
     teacher: 1
   }
+
+  def levels
+    course_teacher.course.levels
+  end
+
+  def answers(level)
+    question_answers.select do |q|
+      q.question.level.id == level.id
+    end.count
+  end
+
+  def correct_answers(level)
+    question_answers.select do |q|
+      q.question.level.id == level.id && q.answer == q.question.correct_answer
+    end.count
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def my_answer(question)
+    question_answers.find_by(question_id: question).answer
+  end
 end

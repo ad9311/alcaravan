@@ -1,0 +1,5 @@
+- if current_user
+  .card.flex.justify-between.items-center.my-6
+    %div
+      %span ALCARAVAN
+    %div= button_to 'Salir', destroy_user_session_path	, method: :delete
