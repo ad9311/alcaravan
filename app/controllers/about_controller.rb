@@ -1,5 +1,7 @@
-class PresentationsController < ApplicationController
-  def index; end
+class AboutController < ApplicationController
+  def index
+    @page = params[:page]
+  end
 
   def paginate
     @page = params[:page]

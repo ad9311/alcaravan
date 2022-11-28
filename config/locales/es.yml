@@ -1,6 +1,6 @@
 es:
   test: "¡Hola mundo!"
-  presentations:
+  about:
     presentation:
       title: "Presentación"
       welcome_message: "Bienvenido amiguito a tu libro interactivo multimedia “El Alcaraván” donde podrás conocer sobre el ave Alcaraván, un ave representativa de nuestro departamento Arauca."

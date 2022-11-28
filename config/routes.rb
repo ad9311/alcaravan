@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :dashboard, only: %i[index]
 
   # Presentations
-  resources :presentations, only: %i[index]
-  post 'presentations/paginate'
+  resources :about, only: %i[index]
+  post 'about/paginate'
 
   devise_for :users
 end
