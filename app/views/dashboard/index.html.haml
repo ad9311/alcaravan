@@ -1,2 +1,7 @@
-%h1 Dashboard#index
-%p Find me in app/views/dashboard/index.html.haml
+.sidebar
+  %ul
+    %li= link_to 'Inicio', dashboard_index_path
+    %li= link_to 'Alumnos', students_path
+    %li= button_to 'Salir', destroy_user_session_path	, method: :delete
+
+%div Dashboard
