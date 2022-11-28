@@ -6,10 +6,10 @@ class LevelsController < ApplicationController
   end
 
   def download_pdf
-    require 'open-uri'
+    require('open-uri')
     url = params[:url]
     file_name = params[file_name]
     data = open(url).read
-    send_data data, :disposition => 'attachment', :filename=>"#{file_name}.pdf"
+    send_data(data, disposition: 'attachment', filename: "#{file_name}.pdf")
   end
 end

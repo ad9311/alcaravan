@@ -11,17 +11,16 @@ class StudentsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "Invoice No. #{@student.id}",
-        page_size: 'letter',
-        template: "students/show",
-        layout: "pdf",
-        formats: [:html],
-        orientation: "portrait",
-        lowquality: true,
-        zoom: 1,
-        dpi: 75,
-        lowquality: true,
-        encoding: 'utf8'
+        render(pdf: "Invoice No. #{@student.id}",
+               page_size: 'letter',
+               template: 'students/show',
+               layout: 'pdf',
+               formats: [:html],
+               orientation: 'portrait',
+               lowquality: true,
+               zoom: 1,
+               dpi: 75,
+               encoding: 'utf8')
       end
     end
   end

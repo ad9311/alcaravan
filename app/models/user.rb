@@ -61,5 +61,4 @@ class User < ApplicationRecord
   def my_answer(question)
     question_answers.find_by(question_id: question).answer
   end
-
 end
