@@ -30,6 +30,10 @@ gem 'tailwindcss-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+# Pdf genrator [https://github.com/mileszs/wicked_pdf
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

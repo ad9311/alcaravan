@@ -24,8 +24,7 @@
 #  fk_rails_...  (course_id => courses.id)
 #
 class Level < ApplicationRecord
-  validates :code, :image_source, :image_url, :text, :text_source, presence: true
-  validates :video_url, :video_source, presence: true
+  validates :code, presence: true
 
   belongs_to :course
 

@@ -1,0 +1,9 @@
+-level = Level.first
+
+%div
+  %div Nombre:_______________________________
+  %div= "Grado: #{level.course.name}"
+%br/
+%div
+  %div= level.text.html_safe
+  %div= "Tomado de: #{level.text_source.html_safe}"

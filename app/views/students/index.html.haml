@@ -24,4 +24,4 @@
           .col-span-2= student.first_name
           .col-span-2= student.email
           .col-span-2 niveles
-          .col-span-2= link_to 'pdfs', student_path(student)
+          .col-span-2= link_to 'pdfs', student_path(student, format:'pdf') , target: '_blank'
