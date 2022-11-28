@@ -1,0 +1,7 @@
+%h1= t("about.justification.title")
+%ul
+  - 4.times do |i|
+    %li.mb-3
+      %p= t("about.justification.parragraph_#{i}")
+= button_to "Atrás", about_paginate_path(page: "presentation")
+= button_to "Siguiente", about_paginate_path(page: "skills")
