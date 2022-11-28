@@ -1,9 +1,16 @@
--level = Level.first
-
 %div
-  %div Nombre:_______________________________
-  %div= "Grado: #{level.course.name}"
+  %div= "Nombre: #{@student.full_name}"
+  %div= "Grado: #{@level.course.name}"
 %br/
 %div
-  %div= level.text.html_safe
-  %div= "Tomado de: #{level.text_source.html_safe}"
+  %div= @level.text.html_safe
+  %div= "Tomado de: #{@level.text_source.html_safe}"
+%br/
+-@level.questions.each_with_index do |question, index|
+  %div
+    %div= "#{index + 1}. #{question.text.html_safe}"
+    - question.options.each do |key, value|
+      %div="#{key}. #{value.html_safe}"
+    %div= "la respuesta del estudiante es #{@student.my_answer(question)}"
+    %div= "la respuesta correcta es #{question.correct_answer}"
+  %br/

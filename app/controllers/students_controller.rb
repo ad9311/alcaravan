@@ -2,12 +2,12 @@ class StudentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @students = User.student
+    @students = current_user.course_teacher.course.students
   end
 
   def show
     @student = User.student.find(params[:id])
-
+    @level = Level.find(params[:level_id])
     respond_to do |format|
       format.html
       format.pdf do

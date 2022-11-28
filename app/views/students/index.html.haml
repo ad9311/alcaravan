@@ -1,27 +1,22 @@
-.sidebar.border-2
-  %ul
-    %li= link_to 'Inicio', dashboard_index_path
-    %li= link_to 'Alumnos', students_path
-    %li= button_to 'Salir', destroy_user_session_path	, method: :delete
-
-
-.container.border-2
-  .card
-    .card-header
-      %h2 Estudiantes
-    .card-body
-      .grid.grid-cols-12.gap-2.font-bold
-        .col-span-2 Id
-        .col-span-2 Usuario
-        .col-span-2 Nombre
-        .col-span-2 Correo
-        .col-span-2 Niveles
-        .col-span-2 Pdf
-      -@students.map do |student|
-        .grid.grid-cols-12.gap-2
-          .col-span-2= student.id
-          .col-span-2= student.username
-          .col-span-2= student.first_name
-          .col-span-2= student.email
-          .col-span-2 niveles
-          .col-span-2= link_to 'pdfs', student_path(student, format:'pdf') , target: '_blank'
+.card
+  .card-header
+    %h2 Estudiantes
+  .card-body
+    .grid.grid-cols-12.gap-2.font-bold
+      .col-span-2 Usuario
+      .col-span-2 Nombre
+      .col-span-2 Nivel 1
+      .col-span-2 Nivel 2
+      .col-span-2 Nivel 3
+      .col-span-2 Nivel 4
+    -@students.map do |student|
+      .grid.grid-cols-12.gap-2
+        .col-span-2= student.username
+        .col-span-2= student.first_name
+        - student.course_student.course.levels.each do |level|
+          .col-span-2.flex.flex-col
+            -if student.answers(level) > 0
+              %span= "#{student.correct_answers(level)}/#{level.questions.count}"
+              %span= link_to 'Pdf', student_path(id: student, level_id: level, format:'pdf') , target: '_blank'
+            -else
+              %span N/A

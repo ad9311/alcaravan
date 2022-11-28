@@ -18,5 +18,6 @@ class Course < ApplicationRecord
 
   has_many :levels, dependent: :destroy
   has_many :course_students, dependent: :destroy
+  has_many :students, through: :course_students, source: :user
   has_many :course_teachers, dependent: :destroy
 end
