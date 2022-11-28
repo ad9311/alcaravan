@@ -1,0 +1,20 @@
+.mb-8
+  %h1= t("about.quality_references.title")
+  %p= t("about.quality_references.parragraph_1")
+
+.mb-8
+  %h2= t("about.quality_references.course_1.title")
+  %ul
+    - 10.times do |i|
+      %li.mb-3
+        %p= t("about.quality_references.course_1.bullet_#{i}")
+
+%h2= t("about.quality_references.course_2.title")
+%ul
+  - 10.times do |i|
+    %li.mb-3
+      %p= t("about.quality_references.course_2.bullet_#{i}")
+
+.mt-5
+  = button_to "Atrás", about_paginate_path(page: "justification")
+  = button_to "Siguiente", about_paginate_path(page: "authors")

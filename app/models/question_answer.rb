@@ -4,7 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  answer      :string           not null
-#  answered_at :datetime         default(Sun, 27 Nov 2022 22:52:00.275307000 UTC +00:00), not null
+#  answered_at :datetime         default(Mon, 28 Nov 2022 00:17:01.839987000 UTC +00:00), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  question_id :bigint           not null
