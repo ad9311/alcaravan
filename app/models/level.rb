@@ -31,7 +31,7 @@ class Level < ApplicationRecord
   has_many :questions, dependent: :destroy
 
   def number
-    code.sub(/[A-Z]/, "").split('').first
+    code.sub(/[A-Z]/, '').chars.first
   end
 
   def self.next(level)

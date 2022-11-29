@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :get_question, only: %i[show]
+  before_action :set_question, only: %i[show]
 
   def index
     @course = current_user.my_course
@@ -10,10 +10,7 @@ class QuestionsController < ApplicationController
       @question = @level.questions.order(:code).first
     else
       @question = Question.next(@question_answered.question)
-      if @question.nil?
-      else
-        @level = @question.level
-      end
+      @level = @question.level unless @question.nil?
     end
   end
 
@@ -25,7 +22,7 @@ class QuestionsController < ApplicationController
 
   private
 
-  def get_question
+  def set_question
     @question = Question.find_by(id: params[:id])
   end
 end

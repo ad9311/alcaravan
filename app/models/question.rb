@@ -30,7 +30,7 @@ class Question < ApplicationRecord
   has_one :course, through: :level, source: :course
 
   def number
-    code.sub(/[A-Z]/, "").split('').first
+    code.sub(/[A-Z]/, '').chars.first
   end
 
   def self.next(question)
@@ -38,12 +38,12 @@ class Question < ApplicationRecord
 
     if question.number.to_i < 5
       new_code = question.code.sub("Q#{question.number}", "Q#{question.number.to_i + 1}")
-      return Question.find_by(code: new_code)
+      Question.find_by(code: new_code)
     else
       new_level = Level.next(question.level)
       unless new_level.nil?
         new_code = "Q1L#{new_level.number}C#{question.course.number}"
-        return Question.find_by(code: new_code)
+        Question.find_by(code: new_code)
       end
     end
   end

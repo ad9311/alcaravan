@@ -22,6 +22,6 @@ class Course < ApplicationRecord
   has_many :course_teachers, dependent: :destroy
 
   def number
-    code.sub(/[A-Z]/, "").split('').first
+    code.sub(/[A-Z]/, '').chars.first
   end
 end
