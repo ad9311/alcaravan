@@ -15,14 +15,28 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @next_question = Question.next(@question)
+    redirect_to(questions_path) and return if @question.nil?
+
+    @question_answer = QuestionAnswer.new
+    @level = @question.level
   end
 
-  def next; end
+  def next
+    @question = Question.find_by(id: question_params[:id])
+    @next_question = Question.next(@question)
+
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
 
   private
 
   def set_question
     @question = Question.find_by(id: params[:id])
+  end
+
+  def question_params
+    params.require(:question).permit(:id, :options)
   end
 end

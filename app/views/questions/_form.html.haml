@@ -1,0 +1,11 @@
+.form-group
+  %span= question.code
+  %h2= question.text
+  = form_with model: question, url: questions_next_path, method: :post do |f|
+    = f.hidden_field :id
+    - question.options.each_pair do |k, v|
+      .form-fields
+        %span= k.upcase
+        = f.radio_button :options, k
+        = f.label :options, v
+    = f.submit 'Siguiente'
