@@ -3,6 +3,8 @@
   .card
     .card-header
       = current_user.username
+      = t(current_user.role)
+      = current_user.course_student&.course&.name || current_user.course_teacher&.course&.name
     %ul
       %li= link_to 'Inicio', about_index_path
       -if current_user.teacher?

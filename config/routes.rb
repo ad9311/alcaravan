@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   resources :about, only: %i[index]
   post 'about/paginate'
 
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    sessions: 'users/sessions'
+  }
 end
