@@ -1,10 +1,13 @@
-%h1= @course.name
-%span Preguntas contestadas:
-%div
-  %span.block 0/5
-.flex
-  - if @question.number == "1"
-    %span.block.mr-3= link_to "Continuar", question_path(@question)
-  - else
-    %span.block.mr-3= link_to "Continuar", question_path(@question)
-  %span.block= "Pregunta ##{@question.number} - Nivel ##{@level.number}"
+- if @question.nil?
+  = render "finish"
+- else
+  %h1= @course.name
+  %span Preguntas contestadas:
+  %div
+    %span.block 0/5
+  .flex
+    - if @question.number == "1"
+      %span.block.mr-3= link_to "Continuar", question_path(@question)
+    - else
+      %span.block.mr-3= link_to "Continuar", question_path(@question)
+    %span.block= "Pregunta ##{@question.number} - Nivel ##{@level.number}"

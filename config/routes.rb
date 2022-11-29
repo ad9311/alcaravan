@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :questions, only: %i[index show]
   post 'questions/submit', to: 'questions#submit'
   patch 'questions/fix', to: 'questions#fix'
+  patch 'questions/reset_level', to: 'questions#reset_level'
 
   devise_for :users
 end

@@ -67,4 +67,10 @@ class User < ApplicationRecord
   def last_answered
     question_answers.order(:answered_at).last
   end
+
+  def destroy_question_answers(level)
+    level.questions.each do |question|
+      question.question_answers.where(user_id: id).destroy_all
+    end
+  end
 end

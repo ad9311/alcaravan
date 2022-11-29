@@ -1,8 +1,11 @@
 = turbo_stream.update "questions" do
-  - if @question.nil?
+  - if @next_question.nil? || @question.nil?
     = render "finish"
   - else
     - if @error.nil?
+      - unless @next_level.nil?
+        %h1= @next_level.code
+        =@count
       = render "form", question: @next_question
     - else
       %p= @error

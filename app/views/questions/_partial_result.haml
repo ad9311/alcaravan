@@ -1,0 +1,3 @@
+%p=@level&.code
+%p= current_user.correct_answers(@level)
+= button_to 'Reintentar', questions_reset_level_path(id: @level), method: :patch

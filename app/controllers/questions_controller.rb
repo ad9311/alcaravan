@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: %i[show]
   before_action :question_answered, only: %i[submit fix]
+  before_action :set_level, only: %i[reset_level]
 
   def index
     @course = current_user.my_course
@@ -19,10 +20,23 @@ class QuestionsController < ApplicationController
     redirect_to(questions_path) and return if @question.nil?
 
     @level = @question.level
+    @count = current_user.answers(@level)
   end
 
+  def reset_level
+    current_user.destroy_question_answers(@level)
+    @question = @level.questions.order(:code).first
+    redirect_to(question_path(@question))
+  end
+
+  def next_level; end
+
   def submit
-    @error = 'Hubo un error' if !@question.nil? && !create_question_answer
+    if !@question.nil? && !create_question_answer
+      @error = 'Hubo un error'
+    else
+      @count = current_user.answers(@level)
+    end
 
     respond_to do |format|
       format.turbo_stream
@@ -30,7 +44,11 @@ class QuestionsController < ApplicationController
   end
 
   def fix
-    @error = 'Hubo un error' if !@question.nil? && !patch_question_answer
+    if !@question.nil? && !patch_question_answer
+      @error = 'Hubo un error'
+    else
+      @count = current_user.answers(@level)
+    end
 
     respond_to do |format|
       format.turbo_stream
@@ -40,6 +58,8 @@ class QuestionsController < ApplicationController
   private
 
   def find_answer(question)
+    return if question.nil?
+
     @selected = current_user.question_answers.find_by(question:)
     @answer = @selected.answer if @selected&.question&.id == question.id
   end
@@ -49,9 +69,15 @@ class QuestionsController < ApplicationController
     find_answer(@question)
   end
 
+  def set_level
+    @level = Level.find_by(id: params[:id])
+  end
+
   def question_answered
     @question = Question.find_by(id: question_params[:id])
     @next_question = Question.next(@question)
+    @level = @question&.level
+    @next_level = @next_question&.level
     find_answer(@next_question)
   end
 
