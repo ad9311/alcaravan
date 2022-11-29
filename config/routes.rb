@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   resources :about, only: %i[index]
   post 'about/paginate'
 
+  # Questions
+  resources :questions, only: %i[index show]
+
   devise_for :users
 end

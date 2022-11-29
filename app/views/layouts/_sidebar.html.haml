@@ -1,9 +1,12 @@
 
-- if current_user
+- if user_signed_in?
   .card
     .card-header
       = current_user.username
     %ul
       %li= link_to 'Inicio', dashboard_index_path
-      %li= link_to 'Alumnos', students_path
-      %li= link_to 'Lecturas', levels_path
+      - if current_user.teacher?
+        %li= link_to 'Alumnos', students_path
+        %li= link_to 'Lecturas', levels_path
+      - if current_user.student?
+        %li= link_to 'Preguntas', questions_path

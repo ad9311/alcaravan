@@ -20,4 +20,8 @@ class Course < ApplicationRecord
   has_many :course_students, dependent: :destroy
   has_many :students, through: :course_students, source: :user
   has_many :course_teachers, dependent: :destroy
+
+  def number
+    code.sub(/[A-Z]/, "").split('').first
+  end
 end
