@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[show next_level]
+  before_action :set_question, only: %i[show next_level back]
   before_action :question_answered, only: %i[submit fix]
   before_action :set_level, only: %i[reset_level]
 
@@ -54,6 +54,15 @@ class QuestionsController < ApplicationController
       @count = current_user.answers(@level)
     end
 
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
+
+  def back
+    @prev_question = Question.back(@question)
+    @answer = find_answer(@prev_question)
+    @error = 'Hubo un error' if @prev_question.nil?
     respond_to do |format|
       format.turbo_stream
     end

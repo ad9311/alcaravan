@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   patch 'questions/fix', to: 'questions#fix'
   patch 'questions/reset_level', to: 'questions#reset_level'
   post 'questions/next_level', to: 'questions#next_level'
+  post 'questions/back', to: 'questions#back'
 
   devise_for :users
 end

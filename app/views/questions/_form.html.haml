@@ -13,3 +13,5 @@
           = f.radio_button :answer, k
         = f.label :answer, v.html_safe
     = f.submit 'Siguiente'
+  - unless question.code.include?('Q1L1')
+    = button_to 'Atrás', questions_back_path(id: question)
