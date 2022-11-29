@@ -3,6 +3,7 @@
   %h2= question.text
   = form_with model: question, url: @answer.nil? ? questions_submit_path : questions_fix_path, method: @answer.nil? ? :post : :patch do |f|
     = f.hidden_field :id
+    .font-bold= question.correct_answer
     - question.options.each_pair do |k, v|
       .form-fields
         %span= k.upcase

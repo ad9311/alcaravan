@@ -1,3 +1,7 @@
-%p=@level&.code
-%p= current_user.correct_answers(@level)
-= button_to 'Reintentar', questions_reset_level_path(id: @level), method: :patch
+- correct_answers = current_user.correct_answers(@level)
+%p= @level&.code
+%p= correct_answers
+- if correct_answers >= 3
+  = button_to 'Siguiente', questions_next_level_path(id: @next_question), method: :post
+- else
+  = button_to 'Reintentar', questions_reset_level_path(id: @level), method: :patch

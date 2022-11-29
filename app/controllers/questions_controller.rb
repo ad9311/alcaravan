@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[show]
+  before_action :set_question, only: %i[show next_level]
   before_action :question_answered, only: %i[submit fix]
   before_action :set_level, only: %i[reset_level]
 
@@ -29,7 +29,11 @@ class QuestionsController < ApplicationController
     redirect_to(question_path(@question))
   end
 
-  def next_level; end
+  def next_level
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
 
   def submit
     if !@question.nil? && !create_question_answer
