@@ -32,7 +32,6 @@ Level.create(
   course: Course.all.find_by(code: 'C5A')
 )
 
-
 Level.create(
   code: 'L1C3',
   image_source: 'https://elrinconcolombiano.com/leyenda-la-candileja-o-bola-de-fuego/',
