@@ -17,13 +17,12 @@ class QuestionsController < ApplicationController
 
   def show
     redirect_to(questions_path) and return if @question.nil?
+
     @level = @question.level
   end
 
   def submit
-    unless @question.nil?
-      @error = 'Hubo un error' unless create_question_answer
-    end
+    @error = 'Hubo un error' if !@question.nil? && !create_question_answer
 
     respond_to do |format|
       format.turbo_stream
@@ -31,9 +30,7 @@ class QuestionsController < ApplicationController
   end
 
   def fix
-    unless @question.nil?
-      @error = 'Hubo un error' unless patch_question_answer
-    end
+    @error = 'Hubo un error' if !@question.nil? && !patch_question_answer
 
     respond_to do |format|
       format.turbo_stream
@@ -43,7 +40,7 @@ class QuestionsController < ApplicationController
   private
 
   def find_answer(question)
-    @selected = current_user.question_answers.find_by(question: question)
+    @selected = current_user.question_answers.find_by(question:)
     @answer = @selected.answer if @selected&.question&.id == question.id
   end
 
