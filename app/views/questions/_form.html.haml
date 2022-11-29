@@ -6,6 +6,9 @@
     - question.options.each_pair do |k, v|
       .form-fields
         %span= k.upcase
-        = f.radio_button :options, k
-        = f.label :options, v
+        - if !@answer.nil? && @answer == k
+          = f.radio_button :answer, k, checked: true
+        - else
+          = f.radio_button :answer, k
+        = f.label :answer, v.html_safe
     = f.submit 'Siguiente'

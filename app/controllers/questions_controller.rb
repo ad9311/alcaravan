@@ -3,13 +3,13 @@ class QuestionsController < ApplicationController
 
   def index
     @course = current_user.my_course
-    @question_answered = current_user.last_answered
+    @last = current_user.last_answered
 
-    if @question_answered.nil?
+    if @last.nil?
       @level = Level.find_by(code: "L1C#{@course.number}")
       @question = @level.questions.order(:code).first
     else
-      @question = Question.next(@question_answered.question)
+      @question = Question.next(@last.question)
       @level = @question.level unless @question.nil?
     end
   end
@@ -17,13 +17,19 @@ class QuestionsController < ApplicationController
   def show
     redirect_to(questions_path) and return if @question.nil?
 
-    @question_answer = QuestionAnswer.new
     @level = @question.level
+    @selected = current_user.question_answers.find_by(question: @question)
+    return unless @selected&.question&.id == @question.id
+
+    @answer = @selected.answer
   end
 
   def next
     @question = Question.find_by(id: question_params[:id])
-    @next_question = Question.next(@question)
+    unless @question.nil?
+      @next_question = Question.next(@question)
+      @error = 'Hubo un error' unless create_question_answer
+    end
 
     respond_to do |format|
       format.turbo_stream
@@ -32,11 +38,15 @@ class QuestionsController < ApplicationController
 
   private
 
+  def create_question_answer
+    QuestionAnswer.new(user: current_user, question: @question, answer: question_params[:answer]).save
+  end
+
   def set_question
     @question = Question.find_by(id: params[:id])
   end
 
   def question_params
-    params.require(:question).permit(:id, :options)
+    params.require(:question).permit(:id, :answer)
   end
 end
