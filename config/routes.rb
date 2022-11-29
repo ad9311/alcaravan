@@ -13,7 +13,8 @@ Rails.application.routes.draw do
 
   # Questions
   resources :questions, only: %i[index show]
-  post 'questions/next', to: 'questions#next'
+  post 'questions/submit', to: 'questions#submit'
+  patch 'questions/fix', to: 'questions#fix'
 
   devise_for :users
 end

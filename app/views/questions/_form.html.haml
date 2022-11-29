@@ -1,7 +1,7 @@
 .form-group
   %span= question.code
   %h2= question.text
-  = form_with model: question, url: questions_next_path, method: :post do |f|
+  = form_with model: question, url: @answer.nil? ? questions_submit_path : questions_fix_path, method: @answer.nil? ? :post : :patch do |f|
     = f.hidden_field :id
     - question.options.each_pair do |k, v|
       .form-fields
