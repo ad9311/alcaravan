@@ -1,4 +1,6 @@
-.card-header
-  %h1= t("about.presentation.title")
-%p= t("about.presentation.welcome_message")
-= button_to "Siguiente", about_paginate_path(page: "justification"), class: "btn-primary"
+.con
+  .card-header
+    %h1= t("about.presentation.title")
+  %p= t("about.presentation.welcome_message")
+.mt-5.flex.justify-end
+  = button_to "Siguiente", about_paginate_path(page: "justification"), class: "btn-secondary"

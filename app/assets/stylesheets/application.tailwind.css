@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
   body{
-    color: #252C30;
+    color: #4c5960;
     height: 100vh;
+    font-family: 'Mukta', sans-serif;
   }
 
   .bg-gradient {
@@ -23,11 +26,15 @@
   }
 
   .btn-secondary {
-    @apply py-2 px-4 bg-secondary;
+    @apply py-2 px-4 bg-secondary rounded-xl text-white;
   }
 
   .card {
-    @apply px-8 h-full relative rounded-xl bg-white r-shadow;
+    @apply p-5 h-full relative rounded-xl bg-white border border-neutral-2;;
+  }
+
+  .card-body {
+    @apply px-5 py-3 h-full rounded-xl bg-neutral-1;
   }
 
   .card-header {
@@ -96,13 +103,34 @@
     @apply decoration-1 underline;
   }
 
+  .cursive {
+    font-family: 'Satisfy', cursive;
+  }
+
   .navbar {
-    @apply flex items-center justify-between p-8 border-b-2 border-primary;
-    @apply font-semibold text-base;
+    @apply
+    w-[1200px]
+    m-auto
+    mt-3
+    px-5
+    py-5
+    flex
+    items-center
+    justify-between
+    bg-white
+    rounded-xl
+    border border-neutral-2;
   }
 
-  .caacaca {
-    @apply font-semibold text-lg py-2 ro;
+  .icon {
+    @apply w-6;
   }
 
+  .link {
+    @apply flex flex-col items-center p-2 rounded-xl hover:bg-neutral-100 cursor-pointer justify-between;
+  }
+
+  .con {
+    @apply w-9/12 m-auto;
+  }
 }

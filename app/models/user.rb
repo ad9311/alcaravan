@@ -36,6 +36,8 @@ class User < ApplicationRecord
   has_many :course_teachers, dependent: :destroy
   has_many :courses, through: :course_teachers, source: :course
   has_many :question_answers, dependent: :destroy
+  has_one :course_teacher, dependent: :destroy
+  has_one :course, through: :course_teacher, source: :course
 
   enum role: {
     student: 0,

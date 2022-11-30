@@ -1,13 +1,14 @@
 .card
-  = turbo_frame_tag "about" do
-    - case @page
-    - when "presentation"
-      = render "presentation"
-    - when "justification"
-      = render "justification"
-    - when "skills"
-      = render "skills"
-    - when "authors"
-      = render "authors"
-    - else
-      = render "presentation"
+  .card-body
+    = turbo_frame_tag "about" do
+      - case @page
+      - when "presentation"
+        = render "presentation"
+      - when "justification"
+        = render "justification"
+      - when "skills"
+        = render "skills"
+      - when "authors"
+        = render "authors"
+      - else
+        = render "presentation"
