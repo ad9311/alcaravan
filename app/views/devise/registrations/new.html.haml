@@ -28,6 +28,16 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
+  .field
+    = label_tag :course_id
+    %br/
+    = select_tag "course_id", options_from_collection_for_select(Course.all, "id", "name")
+  .field
+    = f.label :role, t("teacher")
+    = f.radio_button :role, 'teacher', {}
+    %br/
+    = f.label :role, t("student")
+    = f.radio_button :role, 'student', {}
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"

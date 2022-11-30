@@ -1,5 +1,6 @@
-- if user_signed_in?
-  .card.flex.justify-between.items-center.my-6
-    %div
-      %span ALCARAVAN
-    %div= button_to 'Salir', destroy_user_session_path	, method: :delete
+.navbar
+  .flex.items-end
+    .rounded-full.border.border-primary
+      = image_tag 'birdIcon.svg', class: 'w-12'
+    %span ALCARAVAN
+  %div= button_to 'Salir', destroy_user_session_path	, method: :delete
