@@ -27,5 +27,6 @@ WickedPdf.config = {
   # 'xvfb-run' command, in order to simulate an X server.
   #
   # use_xvfb: true,
-  exe_path: '/usr/local/bin/wkhtmltopdf'
+  exe_path: '/usr/local/bin/wkhtmltopdf',
+  enable_local_file_access: true
 }
