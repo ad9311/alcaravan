@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'dashboard#index'
+  root 'about#index'
 
   # Dashboard
   resources :dashboard, only: %i[index]
@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   resources :about, only: %i[index]
   post 'about/paginate'
 
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    sessions: 'users/sessions'
+  }
 end

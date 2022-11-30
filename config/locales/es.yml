@@ -1,5 +1,7 @@
 es:
   test: "¡Hola mundo!"
+  teacher: "Docente"
+  student: "Estudiante"
   about:
     presentation:
       title: "Presentación"
