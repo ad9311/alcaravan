@@ -12,9 +12,9 @@ module.exports = {
       colors: {
         "primary": "#53C351",
         "secondary": "#F6AE2D",
-        "nuetral-1": "#F5F5F5",
-        "nuetral-2": "#DADADA",
-        "nuetral-3": "#353535",
+        "neutral-1": "#F5F5F5",
+        "neutral-2": "#DADADA",
+        "neutral-3": "#353535",
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],

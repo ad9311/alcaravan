@@ -1,6 +1,37 @@
 .navbar
-  .flex.items-end
-    .rounded-full.border.border-primary
-      = image_tag 'birdIcon.svg', class: 'w-12'
-    %span ALCARAVAN
-  %div= button_to 'Salir', destroy_user_session_path	, method: :delete
+  = link_to root_path do
+    .flex.items-center
+      .rounded-full.border.border-primary
+        = image_tag "birdIcon.svg", class: "w-12"
+      .ml-3.pt-2
+        %span.font-bold.cursive.text-3xl Alcaraván
+  %div
+    - if current_user.student?
+      %ul.grid.grid-cols-2
+        %li.link
+          = image_tag "home.svg", class: "icon"
+          = link_to "Inicio", dashboard_index_path, class: "mt-1 text-xs text-neutral-500"
+        %li.link
+          = image_tag "book.svg", class: "icon"
+          = link_to "Preguntas", questions_path, class: "mt-1 text-xs text-neutral-500"
+    - else
+      %ul.grid.grid-cols-3
+        %li.link
+          = image_tag "home.svg", class: "icon"
+          = link_to "Inicio", dashboard_index_path, class: "mt-1 text-xs text-neutral-500"
+        %li.link
+          = image_tag "student.svg", class: "icon w-[2rem]"
+          = link_to "Alumnos", students_path, class: "mt-1 text-xs text-neutral-500"
+        %li.link
+          = image_tag "text.svg", class: "icon"
+          = link_to "Lecturas", levels_path, class: "mt-1 text-xs text-neutral-500"
+
+  .flex.items-center
+    .mr-5.flex.flex-col.items-center
+      %spanb.font-bold= current_user.full_name
+      %span.text-xs= t(current_user.role)
+    .link
+      = button_to destroy_user_session_path, method: :delete, class: "icon" do
+        = image_tag "logout.svg"
+      %span.text-xs.text-neutral-500 Cerrar sesión
+  

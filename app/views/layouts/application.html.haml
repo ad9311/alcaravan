@@ -10,7 +10,6 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body.bg-gradient
-    .m-0.mb-8= render 'layouts/navbar'
-    %main.grid.grid-cols-12.gap-6.my-8.mx-40
-      .col-span-2= render 'layouts/sidebar'
+    %div= render 'layouts/navbar'
+    %main{class: "w-[1200px] mt-5 m-auto"}
       .col-start-3.col-span-10= yield

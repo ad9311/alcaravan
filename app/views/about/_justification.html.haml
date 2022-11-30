@@ -1,8 +1,10 @@
-.card-header
-  %h1= t("about.justification.title")
-%ul
-  - 4.times do |i|
-    %li.mb-3
-      %p= t("about.justification.parragraph_#{i}")
-= button_to "Atrás", about_paginate_path(page: "presentation"), class: "btn-secondary"
-= button_to "Siguiente", about_paginate_path(page: "skills"), class: "btn-primary"
+.con
+  .card-header
+    %h1= t("about.justification.title")
+  %ul
+    - 4.times do |i|
+      %li.mb-3
+        %p= t("about.justification.parragraph_#{i}")
+.mt-5.flex.justify-between
+  = button_to "Atrás", about_paginate_path(page: "presentation"), class: "btn-secondary"
+  = button_to "Siguiente", about_paginate_path(page: "skills"), class: "btn-secondary"
