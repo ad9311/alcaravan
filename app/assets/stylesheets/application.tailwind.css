@@ -31,7 +31,11 @@
   }
 
   .card-header {
-    @apply mb-5 text-nuetral-3 font-bold text-xl;
+    @apply py-6 text-neutral-3 font-bold text-2xl;
+  }
+
+  .card-body {
+    @apply pt-4 pb-6;
   }
 
   .r-shadow {
@@ -94,6 +98,11 @@
 
   .navbar {
     @apply flex items-center justify-between p-8 border-b-2 border-primary;
+    @apply font-semibold text-base;
+  }
+
+  .caacaca {
+    @apply font-semibold text-lg py-2 ro;
   }
 
 }
