@@ -29,4 +29,18 @@ class Level < ApplicationRecord
   belongs_to :course
 
   has_many :questions, dependent: :destroy
+
+  def number
+    code.sub(/[A-Z]/, '').chars.first
+  end
+
+  def self.next(level)
+    new_code = level.code.sub("L#{level.number}", "L#{level.number.to_i + 1}")
+    Level.find_by(code: new_code)
+  end
+
+  def self.back(level)
+    new_code = level.code.sub("L#{level.number}", "L#{level.number.to_i - 1}")
+    Level.find_by(code: new_code)
+  end
 end

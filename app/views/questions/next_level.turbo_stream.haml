@@ -1,0 +1,6 @@
+= turbo_stream.update "questions" do
+  - if @question.nil?
+    = render "finish"
+  - else
+    %p= @question.code
+    = link_to 'Siquiente', question_path(@question)

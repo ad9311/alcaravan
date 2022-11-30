@@ -1,17 +1,12 @@
-
-- if current_user
-  .card
-    .card-header
-      = current_user.username
-      = t(current_user.role)
-      = current_user.course_student&.course&.name || current_user.course_teacher&.course&.name
-    %ul
-      %li= link_to 'Inicio', about_index_path
-      -if current_user.teacher?
-        %li= link_to 'Alumnos', students_path
-        %li= link_to 'Lecturas', levels_path
-      -else
-        %li Leccion 1
-        %li Leccion 2
-        %li Leccion 3
-        %li Leccion 4
+.card
+  .card-header
+    = current_user.username
+    = t(current_user.role)
+    = current_user.course_student&.course&.name || current_user.course_teacher&.course&.name
+  %ul
+    %li= link_to 'Inicio', dashboard_index_path
+    - if current_user.teacher?
+      %li= link_to 'Alumnos', students_path
+      %li= link_to 'Lecturas', levels_path
+    - if current_user.student?
+      %li= link_to 'Preguntas', questions_path

@@ -62,6 +62,9 @@ gem 'devise'
 gem 'haml-rails'
 gem 'html2haml'
 
+# Use byebug
+gem 'byebug'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]

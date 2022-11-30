@@ -4,7 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  answer      :string           not null
-#  answered_at :datetime         default(Sun, 27 Nov 2022 22:22:22.938441000 -05 -05:00), not null
+#  answered_at :datetime         not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  question_id :bigint           not null
@@ -21,8 +21,15 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class QuestionAnswer < ApplicationRecord
+  before_validation :current_date_time
   validates :answer, presence: true
 
   belongs_to :question
   belongs_to :user
+
+  private
+
+  def current_date_time
+    self.answered_at = DateTime.now
+  end
 end

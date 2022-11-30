@@ -30,7 +30,9 @@ class User < ApplicationRecord
   validates :username, :first_name, :last_name, presence: true
 
   has_one :course_student, dependent: :destroy
-  has_one :course_teacher, dependent: :destroy
+  has_many :course_teachers, dependent: :destroy
+  has_one :my_course, through: :course_student, source: :course
+  has_many :courses, through: :course_teachers, source: :course
   has_many :question_answers, dependent: :destroy
 
   enum role: {
@@ -60,5 +62,15 @@ class User < ApplicationRecord
 
   def my_answer(question)
     question_answers.find_by(question_id: question).answer
+  end
+
+  def last_answered
+    question_answers.order(:answered_at).last
+  end
+
+  def destroy_question_answers(level)
+    level.questions.each do |question|
+      question.question_answers.where(user_id: id).destroy_all
+    end
   end
 end
