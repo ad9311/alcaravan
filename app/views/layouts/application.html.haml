@@ -9,8 +9,8 @@
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
-  %body
-    %main.container.mx-auto.mt-28.px-5.grid.grid-cols-12.gap-y-11.gap-x-4
-      .col-span-12= render 'layouts/navbar'
+  %body.bg-gradient
+    .m-0.mb-8= render 'layouts/navbar'
+    %main.grid.grid-cols-12.gap-6
       .col-span-2= render 'layouts/sidebar'
       .col-start-3.col-span-10= yield

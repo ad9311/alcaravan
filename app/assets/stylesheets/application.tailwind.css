@@ -4,12 +4,28 @@
 
 
 @layer components {
+  body{
+    color: #252C30;
+    height: 100vh;
+  }
+
+  .bg-gradient {
+    background: linear-gradient(0deg, rgba(255,255,255,1) 15%, rgba(226,238,236,1) 36%, rgba(226,238,236,1) 63%, rgba(226,238,236,1) 89%);
+    @apply bg-no-repeat;
+  }
+
+  .btn {
+    @apply border-none rounded w-full text-lg p-3 my-5 mx-0 text-white cursor-pointer;
+  }
+
   .btn-primary {
     @apply py-2 px-4 bg-primary;
   }
+
   .btn-secondary {
     @apply py-2 px-4 bg-secondary;
   }
+
   .card {
     @apply px-8 h-full relative rounded-xl bg-white r-shadow;
   }
@@ -21,4 +37,63 @@
   .r-shadow {
     box-shadow: 0 0 0.5rem 0.25rem rgb(224, 224, 224);
   }
+
+  .wrapper {
+    background-color: rgb(226 238 236 / 45%);
+    box-shadow: 0 0 10px rgba(226,238,236,1);
+    @apply m-auto p-10 rounded absolute top-0 left-0 right-0 bottom-0 w-[500px] h-[430px] ;
+  }
+
+  .wrapper:before {
+    background-image: url('bg-bird.jpg');
+    content: '';
+    filter: blur(10px);
+    @apply w-full h-full bg-cover fixed top-0 left-0 right-0 bottom-0 -z-10;
+  }
+
+  .wrapper .header-text {
+    @apply text-3xl font-bold mb-8 text-center;
+  }
+
+  .wrapper input {
+    @apply my-3 mx-0 border-none p-3 rounded-2xl w-full text-base;
+  }
+
+  .wrapper input[type=checkbox] {
+    @apply hidden;
+  }
+
+  .wrapper label {
+    @apply relative ml-1 mr-1 top-1 inline-block w-5 h-5 cursor-pointer;
+  }
+
+  .wrapper label span {
+    @apply absolute top-0 left-6;
+  }
+
+  .wrapper label:before {
+    content: '';
+    background-color: #ddd;
+    @apply inline-block w-5 h-5 rounded absolute left-0 bottom-1;
+  }
+
+  .wrapper input[type=checkbox]:checked + label:before {
+    content: '\2713';
+    color: #262626;
+    @apply text-xl text-center leading-5;
+  }
+
+  .wrapper span {
+    @apply text-sm;
+  }
+
+  .wrapper a {
+    color: #fff;
+    @apply decoration-1 underline;
+  }
+
+  .navbar {
+    @apply flex items-center justify-between p-8 border-b-2 border-primary;
+  }
+
 }
