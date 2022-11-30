@@ -109,6 +109,6 @@ class QuestionsController < ApplicationController
   end
 
   def all_questions_answered
-    20 == current_user.question_answers.count
+    current_user.question_answers.count == 20
   end
 end

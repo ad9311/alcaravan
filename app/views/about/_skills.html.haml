@@ -1,20 +1,21 @@
-.mb-8
-  %h1= t("about.quality_references.title")
-  %p= t("about.quality_references.parragraph_1")
+.con
+  .mb-8
+    %h1.card-header= t("about.quality_references.title")
+    %p= t("about.quality_references.parragraph_1")
 
-.mb-8
-  %h2= t("about.quality_references.course_1.title")
+  .mb-8
+    %h2.text-lg.font-medium.mb-3= t("about.quality_references.course_1.title")
+    %ul
+      - 10.times do |i|
+        %li.mb-3.list-disc
+          %p= t("about.quality_references.course_1.bullet_#{i}")
+
+  %h2.text-lg.font-medium.mb-3= t("about.quality_references.course_2.title")
   %ul
     - 10.times do |i|
-      %li.mb-3
-        %p= t("about.quality_references.course_1.bullet_#{i}")
+      %li.mb-3.list-disc
+        %p= t("about.quality_references.course_2.bullet_#{i}")
 
-%h2= t("about.quality_references.course_2.title")
-%ul
-  - 10.times do |i|
-    %li.mb-3
-      %p= t("about.quality_references.course_2.bullet_#{i}")
-
-.mt-5
+.mt-5.flex.justify-between
   = button_to "Atrás", about_paginate_path(page: "justification"), class: "btn-secondary"
-  = button_to "Siguiente", about_paginate_path(page: "authors"), class: "btn-primary"
+  = button_to "Siguiente", about_paginate_path(page: "authors"), class: "btn-secondary"
