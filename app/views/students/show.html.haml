@@ -3,8 +3,8 @@
   %div= "Grado: #{@level.course.name}"
 %br/
 %div
-  %div= @level.text.html_safe
-  %div= "Tomado de: #{@level.text_source.html_safe}"
+  %div= @level.text
+  %div= "Tomado de: #{@level.text_source}"
 %br/
 -@level.questions.each_with_index do |question, index|
   %div
