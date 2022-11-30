@@ -17,6 +17,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @question = nil if all_questions_answered
     redirect_to(questions_path) and return if @question.nil?
 
     @level = @question.level
@@ -105,5 +106,9 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:id, :answer)
+  end
+
+  def all_questions_answered
+    20 == current_user.question_answers.count
   end
 end
