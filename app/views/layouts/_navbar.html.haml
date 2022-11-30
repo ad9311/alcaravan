@@ -8,27 +8,32 @@
   %div
     - if current_user.student?
       %ul.grid.grid-cols-2
-        %li.link
-          = image_tag "home.svg", class: "icon"
-          = link_to "Inicio", dashboard_index_path, class: "mt-1 text-xs text-neutral-500"
-        %li.link
-          = image_tag "book.svg", class: "icon"
-          = link_to "Preguntas", questions_path, class: "mt-1 text-xs text-neutral-500"
+        %li.link.self-end
+          = link_to about_index_path, class: "mt-1 text-xs text-neutral-500" do
+            = image_tag "home.svg", class: "icon"
+            %span= "Inicio"
+        %li.link.self-end
+          = link_to questions_path, class: "mt-1 text-xs text-neutral-500" do
+            = image_tag "book.svg", class: "icon"
+            %span= "Preguntas"
     - else
       %ul.grid.grid-cols-3
-        %li.link
-          = image_tag "home.svg", class: "icon"
-          = link_to "Inicio", dashboard_index_path, class: "mt-1 text-xs text-neutral-500"
-        %li.link
-          = image_tag "student.svg", class: "icon w-[2rem]"
-          = link_to "Alumnos", students_path, class: "mt-1 text-xs text-neutral-500"
-        %li.link
-          = image_tag "text.svg", class: "icon"
-          = link_to "Lecturas", levels_path, class: "mt-1 text-xs text-neutral-500"
+        %li.link.self-end
+          = link_to about_index_path, class: "mt-1 text-xs text-neutral-500" do
+            = image_tag "home.svg", class: "icon"
+            %span= "Inicio"
+        %li.link.self-end
+          = link_to students_path, class: "mt-1 text-xs text-neutral-500" do
+            = image_tag "student.svg", class: "icon w-[2rem]"
+            %span= "Alumnos"
+        %li.link.self-end
+          = link_to levels_path, class: "mt-1 text-xs text-neutral-500" do
+            = image_tag "text.svg", class: "icon"
+            %span= "Lecturas"
 
   .flex.items-center
     .mr-5.flex.flex-col.items-center
-      %spanb.font-bold= current_user.full_name
+      %spanb.font-bold= current_user.full_name.titleize
       %span.text-xs= t(current_user.role)
     .link
       = button_to destroy_user_session_path, method: :delete, class: "icon" do

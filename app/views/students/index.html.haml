@@ -1,22 +1,23 @@
 .card
   .card-header
-    %h2 Estudiantes
+    %h2= "Estudiantes #{current_user.course.name}"
   .card-body
-    .grid.grid-cols-12.gap-2.font-bold
-      .col-span-2 Usuario
-      .col-span-2 Nombre
-      .col-span-2 Nivel 1
-      .col-span-2 Nivel 2
-      .col-span-2 Nivel 3
-      .col-span-2 Nivel 4
+    .grid.grid-cols-12.font-semibold.text-base.py-4
+      .col-span-4.text-left Nombre
+      .col-span-2.text-left Nivel 1
+      .col-span-2.text-left Nivel 2
+      .col-span-2.text-left Nivel 3
+      .col-span-2.text-left Nivel 4
     -@students.map do |student|
-      .grid.grid-cols-12.gap-2
-        .col-span-2= student.username
-        .col-span-2= student.first_name
+      .grid.grid-cols-12.py-4.px-2.my-3.rounded.bg-neutral-1{class: 'hover:bg-neutral-2'}
+        .col-span-4.text-left= student.full_name.capitalize
         - student.course_student.course.levels.each do |level|
-          .col-span-2.flex.flex-col
-            -if student.answers(level) > 0
+          -if student.answers(level) > 0
+            .col-span-2.text-left
+              %span
+                = link_to student_path(id: student, level_id: level, format:'pdf') , target: '_blank' do
+                  = image_tag 'pdf.svg', alt: 'Pdf icon', class: 'w-6 h-6'
               %span= "#{student.correct_answers(level)}/#{level.questions.count}"
-              %span= link_to 'Pdf', student_path(id: student, level_id: level, format:'pdf') , target: '_blank'
-            -else
+          -else
+            .col-span-2.text-left
               %span N/A

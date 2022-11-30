@@ -38,7 +38,11 @@
   }
 
   .card-header {
-    @apply my-5 text-neutral-3 font-bold text-xl;
+    @apply py-6 text-neutral-3 font-bold text-2xl;
+  }
+
+  .card-body {
+    @apply pt-4 pb-6;
   }
 
   .r-shadow {
@@ -128,5 +132,53 @@
 
   .con {
     @apply w-9/12 m-auto;
+  }
+
+  .text-question {
+    @apply px-8 text-justify;
+  }
+
+  .text-question span {
+    @apply block pb-4 text-center;
+  }
+
+  .text-question span:first-child {
+    @apply font-bold text-4xl;
+  }
+
+  .question-level span{
+    @apply block pb-2 text-center;
+  }
+
+  .text-source {
+    @apply text-sm font-light text-end;
+  }
+
+  .text-source a {
+    @apply text-blue-500 underline;
+  }
+
+  .image-source {
+    @apply text-sm font-light text-end;
+  }
+
+  .image-source a {
+    @apply text-blue-500 underline;
+  }
+
+  .question-option {
+    @apply grid grid-cols-4;
+  }
+
+  .question-option div {
+    @apply border p-5;
+  }
+
+  .question-option span {
+    @apply block pb-4;
+  }
+
+  .question-option span:first-child {
+    @apply font-semibold;
   }
 }

@@ -1,4 +1,6 @@
-= turbo_frame_tag "questions" do
-  %h1= @level.code
-  =@count
-  = render "form", question: @question
+.card
+  = turbo_frame_tag "questions" do
+    .card-header
+      %h1= @level.code
+    =@count
+    = render "form", question: @question
