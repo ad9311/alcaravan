@@ -14,7 +14,7 @@
         - student.course_student.course.levels.each do |level|
           -if student.answers(level) > 0
             .col-span-2.text-left
-              %span
+              -# %span
                 = link_to student_path(id: student, level_id: level, format:'pdf') , target: '_blank' do
                   = image_tag 'pdf.svg', alt: 'Pdf icon', class: 'w-6 h-6'
               %span= "#{student.correct_answers(level)}/#{level.questions.count}"
