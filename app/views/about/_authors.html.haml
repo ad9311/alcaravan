@@ -1,22 +1,22 @@
-.con
-  .card-header
+.con.mt-14.mb-30
+  .card-header.text-center.comic.font-bold.text-4xl.mb-16
     %h1 Autores
   .grid.grid-cols-2.gap-5
     %div
-      %h2.font-medium.text-lg.mb-2= t("about.authors.author_1.name")
-      %p.mb-1= t("about.authors.author_1.ba")
-      %p.mb-1= t("about.authors.author_1.ma")
-      %p.mb-1= t("about.authors.author_1.position")
-      %p.mb-1= t("about.authors.author_1.experience")
-      %p.mb-1= t("about.authors.author_1.email")
-      %p.mb-1= t("about.authors.author_1.contact_number")
+      %h2.text-start.comic.font-bold.text-3xl.mb-6= t("about.authors.author_1.name")
+      %p.list-disc.text-xl.comic.text-start= t("about.authors.author_1.ba")
+      %p.list-disc.text-xl.comic.text-start= t("about.authors.author_1.ma")
+      %p.list-disc.text-xl.comic.text-start= t("about.authors.author_1.position")
+      %p.list-disc.text-xl.comic.text-start= t("about.authors.author_1.experience")
+      %p.list-disc.text-xl.comic.text-start.underline= t("about.authors.author_1.email")
+      %p.list-disc.text-xl.comic.text-start= t("about.authors.author_1.contact_number")
     %div
-      %h2.font-medium.text-lg.mb-2= t("about.authors.author_2.name")
-      %p.mb-1= t("about.authors.author_2.ba")
-      %p.mb-1= t("about.authors.author_2.ma")
-      %p.mb-1= t("about.authors.author_2.position")
-      %p.mb-1= t("about.authors.author_2.experience")
-      %p.mb-1= t("about.authors.author_2.email")
-      %p.mb-1= t("about.authors.author_2.contact_number")
+      %h2.text-start.comic.font-bold.text-3xl.mb-6= t("about.authors.author_2.name")
+      %p.list-disc.text-xl.comic.text-start= t("about.authors.author_2.ba")
+      %p.list-disc.text-xl.comic.text-start= t("about.authors.author_2.ma")
+      %p.list-disc.text-xl.comic.text-start= t("about.authors.author_2.position")
+      %p.list-disc.text-xl.comic.text-start= t("about.authors.author_2.experience")
+      %p.list-disc.text-xl.comic.text-start.underline= t("about.authors.author_2.email")
+      %p.list-disc.text-xl.comic.text-start= t("about.authors.author_2.contact_number")
 .mt-5.flex.justify-start
   = button_to "Atrás", about_paginate_path(page: "skills"), class: "btn-secondary"

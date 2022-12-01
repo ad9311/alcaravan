@@ -1,16 +1,21 @@
-.wrapper
+.wrapper{class: 'h-[500px]'}
+  .flex.items-center.text-primary.absolute.-top-34
+    .rounded-full
+      = image_tag "birdIcon.svg", class: "w-20"
+    .ml-3.pt-2
+      .font-bold.cursive.text-8xl Alcaraván
   .header-text
     %h2 Iniciar Sesión
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
+    .field.mb-4
       = f.text_field :username, autofocus: true, placeholder: 'Usuario'
-    .field
+    .field.mb-4
       = f.password_field :password, placeholder: 'Contraseña'
     - if devise_mapping.rememberable?
       .field
         = f.check_box :remember_me
         = f.label :remember_me do
           %span Recuerdame
-    .actions
+    .actions.mb-3
       = f.submit "Inciar Sesión", class: 'btn btn-primary'
   = render "devise/shared/links"

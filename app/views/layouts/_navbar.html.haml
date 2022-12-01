@@ -8,27 +8,27 @@
   %div
     - if current_user.student?
       %ul.grid.grid-cols-2
-        %li.link.self-end
+        %li.link
           = link_to about_index_path, class: "mt-1 text-xs text-neutral-500" do
-            = image_tag "home.svg", class: "icon"
+            = image_tag "home.svg", class: "icon mx-auto"
             %span= "Inicio"
-        %li.link.self-end
+        %li.link
           = link_to questions_path, class: "mt-1 text-xs text-neutral-500" do
-            = image_tag "book.svg", class: "icon"
+            = image_tag "book.svg", class: "icon mx-auto"
             %span= "Preguntas"
     - else
       %ul.grid.grid-cols-3
-        %li.link.self-end
+        %li.link
           = link_to about_index_path, class: "mt-1 text-xs text-neutral-500" do
-            = image_tag "home.svg", class: "icon"
+            = image_tag "home.svg", class: "icon mx-auto"
             %span= "Inicio"
-        %li.link.self-end
+        %li.link
           = link_to students_path, class: "mt-1 text-xs text-neutral-500" do
-            = image_tag "student.svg", class: "icon w-[2rem]"
+            = image_tag "student.svg", class: "icon w-[2rem] mx-auto"
             %span= "Alumnos"
-        %li.link.self-end
+        %li.link
           = link_to levels_path, class: "mt-1 text-xs text-neutral-500" do
-            = image_tag "text.svg", class: "icon"
+            = image_tag "text.svg", class: "icon mx-auto"
             %span= "Lecturas"
 
   .flex.items-center

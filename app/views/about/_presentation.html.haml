@@ -1,6 +1,8 @@
-.con
-  .card-header
+.img-presentation
+  = image_tag 'just-bird.jpg'
+.con.mt-16.mb-40
+  .card-header.text-center.comic.font-bold.text-4xl.mb-16
     %h1= t("about.presentation.title")
-  %p= t("about.presentation.welcome_message")
+  %p.text-justify.text-2xl= t("about.presentation.welcome_message")
 .mt-5.flex.justify-end
   = button_to "Siguiente", about_paginate_path(page: "justification"), class: "btn-secondary"
