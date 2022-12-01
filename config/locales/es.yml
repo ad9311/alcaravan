@@ -56,3 +56,20 @@ es:
         experience: "8 años de experiencia educativa"
         email: "fernandablum1123@hotmail.com"
         contact_number: "Celular y WhatsApp 3202682011"
+  discover:
+    L1:
+      title: "Ahora te presentaré los huevos del ave el Alcaraván"
+      text: "El alcaraván (Vanellus chilensis) es un ave suramericana que llega a medir hasta 35 cm, llamativa por su altura, los fuertes sonidos que hace en pleno vuelo y por su particular forma de defenderse."
+      image_source: "https://m.facebook.com/YoSoyLlanero/posts/1320106551533727:0"
+    L2:
+      title: "Ya nuestros amigos los alcaravanes han salido de sus huevos"
+      text: "Después de nacer el alcaraván a las pocas horas dejan el nido, pero recorriendo solamente pocos metros, quedando escondidos entre las piedras. Están cubiertos con un plumón de color arenoso y son inconfundibles por su curioso diseño: desde un ojo a otro hay una línea negruzca que pasa por la frente de El Alcaraván se alimenta fundamentalmente de moluscos terrestres, haciendo un consumo de caracoles. También come muchas lombrices de tierra, e insectos entre estos últimos siente predilección por los grandes escarabajos."
+      image_source: "https://blogdeaves.com/burhinidae/alcaravan-comun-caracteristicas-habitat-vida-y-mas/"
+    L3:
+      title: ""
+      text: "El hábitat del alcaraván Esta especie habita terrenos llanos o ligeramente pedregosos, con escasa o nula vegetación. Puede aparecer en pastizales secos, estepas y semidesiertos, o también en zonas agrícolas de secano e incluso regadío. El alcaraván común está activo al atardecer y por la noche. Sólo en días muy nublados, así como durante la crianza de los jóvenes, se observaron fases de actividad más duraderas durante el día. El comienzo de la actividad suele iniciarse con sonidos también fuera de la temporada de cría, pero su mayor intensidad sólo se alcanza poco antes del amanecer."
+      image_source: "https://blogdeaves.com/burhinidae/alcaravan-comun-caracteristicas-habitat-vida-y-mas/"
+    L4:
+      title: ""
+      text: ""
+      image_source: ""

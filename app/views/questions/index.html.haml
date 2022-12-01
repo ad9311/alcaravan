@@ -1,18 +1,15 @@
-- if @question.nil?
-  = render "finish"
-- else
-  .card
-    .card-body
-      .con
-        .card-header
-          %h1= @course.name
-        %div
-          %span Preguntas contestadas:
-          %span 0/5
-        .flex.items-end
-          .mt-5
-            - if @question.number == "1"
-              %span.block.mr-3= link_to "Continuar", question_path(@question), class: "btn-secondary"
-            - else
-              %span.block.mr-3= link_to "Continuar", question_path(@question), class: "btn-secondary"
-          %span.block.font-bold= "Pregunta ##{@question.number} - Nivel ##{@level.number}"
+.card
+  .card-body
+    .con
+      .card-header
+        %h1= @course.name
+      %div
+        %span Preguntas contestadas:
+        %span= "#{current_user.answers(@level)}/5"
+      .flex.items-end
+        .mt-5
+          - if @question.number == "1"
+            %span.block.mr-3= link_to "Continuar", question_path(@question), class: "btn-secondary"
+          - else
+            %span.block.mr-3= link_to "Continuar", question_path(@question), class: "btn-secondary"
+        %span.block.font-bold= "Pregunta ##{@question.number} - Nivel ##{@level.number}"

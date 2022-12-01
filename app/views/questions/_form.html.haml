@@ -1,27 +1,27 @@
-- if @level&.image_url
-  %div
-    .image-question.text-center
-      = image_tag @level.image_url, class: "m-auto"
-    .image-source
-      %span.italic= "Tomado de: "
-      %a(href="#{@level.image_source}")= "#{@level.image_source}"
-- if @level&.video_url
-  %div
-    .image-question
-      %iframe.mx-auto{allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", src: "https://www.youtube.com/embed/1xrZoBFNR7Y?controls=0", title: "YouTube video player", class: "w-full h-96"}
-    .image-source
-      %span.italic Tomado de:
-      %a(href="#{@level.video_source}")= "#{@level.video_source}"
-- if @level&.text
-  .mt-10
-    .text-question
-      = @level.text.html_safe
-    .text-source
-      %span.italic Tomado de:
-      %a(href="#{@level.text_source.html_safe}")= "#{@level.text_source.html_safe}"
-.mt-5
-  %h2.mb-5.text-lg.question-level.font-bold.text-neutral-3= question.text.html_safe
-  = form_with model: question, url: @answer.nil? ? questions_submit_path : questions_fix_path, method: @answer.nil? ? :post : :patch do |f|
+-# - if @level&.image_url
+-#   %div
+-#     .image-question.text-center
+-#       = image_tag @level.image_url, class: "m-auto"
+-#     .image-source
+-#       %span.italic= "Tomado de: "
+-#       %a(href="#{@level.image_source}")= "#{@level.image_source}"
+-# - if @level&.video_url
+-#   %div
+-#     .image-question
+-#       %iframe.mx-auto{allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", src: "https://www.youtube.com/embed/1xrZoBFNR7Y?controls=0", title: "YouTube video player", class: "w-full h-96"}
+-#     .image-source
+-#       %span.italic Tomado de:
+-#       %a(href="#{@level.video_source}")= "#{@level.video_source}"
+-# - if @level&.text
+-#   .mt-10
+-#     .text-question
+-#       = @level.text.html_safe
+-#     .text-source
+-#       %span.italic Tomado de:
+-#       %a(href="#{@level.text_source.html_safe}")= "#{@level.text_source.html_safe}"
+.mt-5{ id: dom_id(question)}
+  %h2.mb-5.text-lg.question-level.font-bold.text-neutral-3= "(#{question.number}) - #{question.text.html_safe}"
+  = form_with model: question, url: @answer.nil? ? submit_question_path : resubmit_question_path, method: @answer.nil? ? :post : :patch do |f|
     = f.hidden_field :id
     .font-bold= question.correct_answer
     - question.options.each_pair do |k, v|
@@ -33,6 +33,6 @@
           = f.radio_button :answer, k, required: true
         = f.label :answer, v.html_safe, class: "pl-1"
     .mt-5.flex.justify-center
-      = f.submit 'Siguiente', class: 'ml-3 btn btn-secondary w-fit'
-- unless question.code.include?('Q1L1')
-  = button_to 'Atrás', questions_back_path(id: question), class: 'btn btn-secondary w-fit'
+      - unless question.code.include?('Q1L1')
+        = link_to 'Atrás', previous_question_path(id: question), class: 'btn btn-primary w-fit'
+      = f.submit 'Siguiente', class: 'ml-3 btn btn-primary w-fit'

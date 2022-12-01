@@ -1,7 +1,6 @@
 .card
   .card-body
     .con
-      = turbo_frame_tag "questions" do
-        .card-header.text-center
-          %h1= "Nivel #{@level.number}"
-        = render "form", question: @question
+      .card-header.text-center
+        %h1= "Nivel #{@level.number}"
+      = render "form", question: @question

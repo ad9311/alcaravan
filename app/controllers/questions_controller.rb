@@ -1,76 +1,91 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[show next_level back]
-  before_action :question_answered, only: %i[submit fix]
-  before_action :set_level, only: %i[reset_level]
+  include ActionView::RecordIdentifier
+
+  before_action :set_question, only: %i[show back]
+  before_action :question_params, only: %i[submit resubmit]
+  before_action :set_level, only: %i[partial_results reset_level discover]
 
   def index
     @course = current_user.my_course
     @last = current_user.last_answered
-
     if @last.nil?
       @level = Level.find_by(code: "L1C#{@course.number}")
       @question = @level.questions.order(:code).first
     else
       @question = Question.next(@last.question)
+      redirect_to(results_path) and return if @question.nil?
       @level = @question.level unless @question.nil?
     end
   end
 
   def show
     @question = nil if all_questions_answered
-    redirect_to(questions_path) and return if @question.nil?
+    redirect_to(results_path) and return if @question.nil?
 
     @level = @question.level
     @count = current_user.answers(@level)
   end
 
-  def reset_level
-    current_user.destroy_question_answers(@level)
-    @question = @level.questions.order(:code).first
-    redirect_to(question_path(@question))
-  end
-
-  def next_level
-    respond_to do |format|
-      format.turbo_stream
-    end
-  end
-
   def submit
+    @question = Question.find(question_params[:id])
     if !@question.nil? && !create_question_answer
-      @error = 'Hubo un error'
+      redirect_to(error_path) and return
     else
+      @level = @question.level
       @count = current_user.answers(@level)
-    end
 
-    respond_to do |format|
-      format.turbo_stream
-    end
-  end
+      if @count == 5
+        redirect_to partial_results_path(id: @level)
 
-  def fix
-    if !@question.nil? && !patch_question_answer
-      @error = 'Hubo un error'
-    else
-      @count = current_user.answers(@level)
-    end
-
-    respond_to do |format|
-      format.turbo_stream
+        return
+      else
+        @next_question = Question.next(@question)
+        redirect_to question_path(@next_question)
+      end
     end
   end
 
   def back
     @prev_question = Question.back(@question)
-    @answer = find_answer(@prev_question)
-    @level = @prev_question.level
-    @error = 'Hubo un error' if @prev_question.nil?
-    respond_to do |format|
-      format.turbo_stream
+    redirect_to question_path(@prev_question)
+  end
+
+  def resubmit
+    @question = Question.find(question_params[:id])
+    if !@question.nil? && !patch_question_answer
+      redirect_to(error_path) and return
+    else
+      @level = @question.level
+      @count = current_user.answers(@level)
+      @next_question = Question.next(@question)
+      redirect_to question_path(@next_question)
     end
   end
 
+  def partial_results; end
+
+  def reset_level
+    current_user.destroy_question_answers(@level)
+    @question = @level.questions.order(:code).first
+
+    redirect_to question_path(@question)
+  end
+
+  def discover
+    @next_level = Level.next(@level)
+    @next_question = @next_level.questions.order(:code).first unless @next_level.nil?
+  end
+
+  def results; end
+
+  def error; end
+
   private
+  
+  def set_question
+    @question = Question.find_by(id: params[:id])
+    find_answer(@question)
+  end
 
   def find_answer(question)
     return if question.nil?
@@ -79,24 +94,12 @@ class QuestionsController < ApplicationController
     @answer = @selected.answer if @selected&.question&.id == question.id
   end
 
-  def set_question
-    @question = Question.find_by(id: params[:id])
-    find_answer(@question)
-  end
-
   def set_level
     @level = Level.find_by(id: params[:id])
   end
 
-  def question_answered
-    @question = Question.find_by(id: question_params[:id])
-    @next_question = Question.next(@question)
-    @level = @question&.level
-    @next_level = @next_question&.level
-    find_answer(@next_question)
-  end
-
   def create_question_answer
+    return if QuestionAnswer.find_by(question: @question, user: current_user)
     QuestionAnswer.new(user: current_user, question: @question, answer: question_params[:answer]).save
   end
 

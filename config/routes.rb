@@ -13,11 +13,14 @@ Rails.application.routes.draw do
 
   # Questions
   resources :questions, only: %i[index show]
-  post 'questions/submit', to: 'questions#submit'
-  patch 'questions/fix', to: 'questions#fix'
-  patch 'questions/reset_level', to: 'questions#reset_level'
-  post 'questions/next_level', to: 'questions#next_level'
-  post 'questions/back', to: 'questions#back'
+  post 'submit_question', to: 'questions#submit'
+  get 'previous_question', to: 'questions#back'
+  patch 'resubmit_question', to: 'questions#resubmit'
+  get 'partial_results', to: 'questions#partial_results'
+  delete 'reset_level', to: 'questions#reset_level'
+  get 'discover', to: 'questions#discover'
+  get 'results', to: 'questions#results'
+  get 'error', to: 'questions#error'
 
   devise_for :users, controllers: {
     registrations: "users/registrations",
