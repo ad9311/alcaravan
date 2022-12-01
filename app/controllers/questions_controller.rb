@@ -14,6 +14,7 @@ class QuestionsController < ApplicationController
     else
       @question = Question.next(@last.question)
       redirect_to(results_path) and return if @question.nil?
+
       @level = @question.level unless @question.nil?
     end
   end
@@ -35,19 +36,17 @@ class QuestionsController < ApplicationController
       @count = current_user.answers(@level)
 
       if @count == 5
-        redirect_to partial_results_path(id: @level)
-
-        return
+        redirect_to(partial_results_path(id: @level)) and return
       else
         @next_question = Question.next(@question)
-        redirect_to question_path(@next_question)
+        redirect_to(question_path(@next_question))
       end
     end
   end
 
   def back
     @prev_question = Question.back(@question)
-    redirect_to question_path(@prev_question)
+    redirect_to(question_path(@prev_question))
   end
 
   def resubmit
@@ -58,7 +57,7 @@ class QuestionsController < ApplicationController
       @level = @question.level
       @count = current_user.answers(@level)
       @next_question = Question.next(@question)
-      redirect_to question_path(@next_question)
+      redirect_to(question_path(@next_question))
     end
   end
 
@@ -68,7 +67,7 @@ class QuestionsController < ApplicationController
     current_user.destroy_question_answers(@level)
     @question = @level.questions.order(:code).first
 
-    redirect_to question_path(@question)
+    redirect_to(question_path(@question))
   end
 
   def discover
@@ -81,7 +80,7 @@ class QuestionsController < ApplicationController
   def error; end
 
   private
-  
+
   def set_question
     @question = Question.find_by(id: params[:id])
     find_answer(@question)
@@ -100,6 +99,7 @@ class QuestionsController < ApplicationController
 
   def create_question_answer
     return if QuestionAnswer.find_by(question: @question, user: current_user)
+
     QuestionAnswer.new(user: current_user, question: @question, answer: question_params[:answer]).save
   end
 

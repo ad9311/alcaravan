@@ -31,8 +31,6 @@ class User < ApplicationRecord
 
   has_one :course_student, dependent: :destroy
   has_one :my_course, through: :course_student, source: :course
-  has_one :course_teacher, dependent: :destroy
-  has_one :course, through: :course_teacher, source: :course
   has_many :course_teachers, dependent: :destroy
   has_many :courses, through: :course_teachers, source: :course
   has_many :question_answers, dependent: :destroy
