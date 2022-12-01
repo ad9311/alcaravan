@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -132,6 +133,10 @@
     font-family: 'Satisfy', cursive;
   }
 
+  .comic {
+    font-family: 'Comic Neue', cursive;
+  }
+
   .navbar {
     @apply
     w-[1200px]
@@ -205,5 +210,25 @@
 
   .question-option span:first-child {
     @apply font-semibold;
+  }
+
+  .img-presentation {
+    position: absolute;
+    width: 35rem;
+    opacity: 0.13;
+    left: 30%;
+    right: 30%;
+    bottom: 10%;
+  }
+
+  .img-justification {
+    position: absolute;
+    opacity: 0.13;
+    left: 30%;
+    right: 30%;
+  }
+
+  .img-justification img {
+    width: 40rem;
   }
 }
