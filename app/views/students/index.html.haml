@@ -9,7 +9,7 @@
       .col-span-2.text-left Nivel 3
       .col-span-2.text-left Nivel 4
     -@students.map do |student|
-      .grid.grid-cols-12.py-4.px-2.my-3.rounded.bg-neutral-1{class: 'hover:bg-neutral-2'}
+      .grid.grid-cols-12.py-4.px-2.my-3.rounded.bg-neutral-2{class: 'hover:bg-neutral-1'}
         .col-span-4.text-left= student.full_name.capitalize
         - student.course_student.course.levels.each do |level|
           -if student.answers(level) > 0

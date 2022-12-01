@@ -52,18 +52,18 @@
   .wrapper {
     background-color: rgb(226 238 236 / 45%);
     box-shadow: 0 0 10px rgba(226,238,236,1);
-    @apply m-auto p-10 rounded absolute top-0 left-0 right-0 bottom-0 w-[500px] h-[430px] ;
+    @apply m-auto p-10 rounded absolute top-0 left-0 right-0 bottom-0 w-[500px] ;
   }
 
   .wrapper:before {
     background-image: url('bg-bird.jpg');
     content: '';
-    filter: blur(10px);
+    filter: blur(6px);
     @apply w-full h-full bg-cover fixed top-0 left-0 right-0 bottom-0 -z-10;
   }
 
   .wrapper .header-text {
-    @apply text-3xl font-bold mb-8 text-center;
+    @apply text-3xl font-bold my-6 text-center text-neutral-3;
   }
 
   .wrapper input {
@@ -94,13 +94,38 @@
     @apply text-xl text-center leading-5;
   }
 
+  .wrapper input[type=radiobutton]:checked + label:before {
+    content: '\2713';
+    color: #262626;
+    @apply text-xl text-center leading-5;
+  }
+
+  .labelr {
+    text-align: start;
+    font-size: 14px;
+  }
+
+  .labelrb {
+    text-align: start;
+    font-size: 14px;
+  }
+
+  .labelr label:before{
+    content: '' !important;
+    display: none !important;
+  }
+
+  .select {
+    width: 26rem;
+    border-radius: 15px;
+  }
+
   .wrapper span {
     @apply text-sm;
   }
 
   .wrapper a {
-    color: #fff;
-    @apply decoration-1 underline;
+    @apply decoration-1 underline text-white hover:text-primary;
   }
 
   .cursive {
