@@ -2,15 +2,17 @@
   = render "finish"
 - else
   .card
-    .card-header
-      %h1= @course.name
     .card-body
-      %span Preguntas contestadas:
-      %div
-        %span.block 0/5
-      .flex
-        - if @question.number == "1"
-          %span.block.mr-3= link_to "Continuar", question_path(@question)
-        - else
-          %span.block.mr-3= link_to "Continuar", question_path(@question)
-        %span.block= "Pregunta ##{@question.number} - Nivel ##{@level.number}"
+      .con
+        .card-header
+          %h1= @course.name
+        %div
+          %span Preguntas contestadas:
+          %span 0/5
+        .flex.items-end
+          .mt-5
+            - if @question.number == "1"
+              %span.block.mr-3= link_to "Continuar", question_path(@question), class: "btn-secondary"
+            - else
+              %span.block.mr-3= link_to "Continuar", question_path(@question), class: "btn-secondary"
+          %span.block.font-bold= "Pregunta ##{@question.number} - Nivel ##{@level.number}"

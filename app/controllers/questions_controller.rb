@@ -63,6 +63,7 @@ class QuestionsController < ApplicationController
   def back
     @prev_question = Question.back(@question)
     @answer = find_answer(@prev_question)
+    @level = @prev_question.level
     @error = 'Hubo un error' if @prev_question.nil?
     respond_to do |format|
       format.turbo_stream

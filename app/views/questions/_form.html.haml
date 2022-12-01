@@ -1,39 +1,38 @@
-.card-body
-  - if @level&.image_url
-    %div
-      .image-question
-        = image_tag @level.image_url
-      .image-source
-        %span Tomado de:
-        %a(href="#{@level.image_source}")= "#{@level.image_source}"
-  - if @level&.text
-    %div
-      .text-question
-        = @level.text.html_safe
-      .text-source
-        %span Tomado de:
-        %a(href="#{@level.text_source.html_safe}")= "#{@level.text_source.html_safe}"
-  - if @level&.video_url
-    %div
-      .image-question
-        %iframe.mx-auto{allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", height: "315", src: "https://www.youtube.com/embed/1xrZoBFNR7Y?controls=0", title: "YouTube video player", width: "560"}
-      .image-source
-        %span Tomado de:
-        %a(href="#{@level.video_source}")= "#{@level.video_source}"
-  .form-group
-    %span= question.code
-    %h2.question-level= question.text.html_safe
-    = form_with model: question, url: @answer.nil? ? questions_submit_path : questions_fix_path, method: @answer.nil? ? :post : :patch do |f|
-      = f.hidden_field :id
-      .font-bold= question.correct_answer
-      - question.options.each_pair do |k, v|
-        .form-fields
-          %span= k.upcase
-          - if !@answer.nil? && @answer == k
-            = f.radio_button :answer, k, checked: true
-          - else
-            = f.radio_button :answer, k
-          = f.label :answer, v.html_safe, class: 'question-option'
-      = f.submit 'Siguiente', class: 'btn btn-primary'
-    - unless question.code.include?('Q1L1')
-      = button_to 'Atrás', questions_back_path(id: question), class: 'btn btn-secondary'
+- if @level&.image_url
+  %div
+    .image-question.text-center
+      = image_tag @level.image_url, class: "m-auto"
+    .image-source
+      %span.italic= "Tomado de: "
+      %a(href="#{@level.image_source}")= "#{@level.image_source}"
+- if @level&.video_url
+  %div
+    .image-question
+      %iframe.mx-auto{allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", src: "https://www.youtube.com/embed/1xrZoBFNR7Y?controls=0", title: "YouTube video player", class: "w-full h-96"}
+    .image-source
+      %span.italic Tomado de:
+      %a(href="#{@level.video_source}")= "#{@level.video_source}"
+- if @level&.text
+  .mt-10
+    .text-question
+      = @level.text.html_safe
+    .text-source
+      %span.italic Tomado de:
+      %a(href="#{@level.text_source.html_safe}")= "#{@level.text_source.html_safe}"
+.mt-5
+  %h2.mb-5.text-lg.question-level.font-bold.text-neutral-3= question.text.html_safe
+  = form_with model: question, url: @answer.nil? ? questions_submit_path : questions_fix_path, method: @answer.nil? ? :post : :patch do |f|
+    = f.hidden_field :id
+    .font-bold= question.correct_answer
+    - question.options.each_pair do |k, v|
+      .form-fields.mb-5
+        %span.font-bold.text-neutral-3.pr-1= "(#{k.upcase})"
+        - if !@answer.nil? && @answer == k
+          = f.radio_button :answer, k, checked: true, required: true
+        - else
+          = f.radio_button :answer, k, required: true
+        = f.label :answer, v.html_safe, class: "pl-1"
+    .mt-5.flex.justify-center
+      = f.submit 'Siguiente', class: 'ml-3 btn btn-secondary w-fit'
+- unless question.code.include?('Q1L1')
+  = button_to 'Atrás', questions_back_path(id: question), class: 'btn btn-secondary w-fit'

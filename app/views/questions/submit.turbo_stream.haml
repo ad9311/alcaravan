@@ -7,8 +7,8 @@
     - else
       - if @error.nil?
         - unless @next_level.nil?
-          %h1= @next_level.code
-          =@count
+          -# %h1= @next_level.code
+          -# =@count
         = render "form", question: @next_question
       - else
         %p= @error
