@@ -18,7 +18,7 @@
         - if @next_question.nil?
           .mt-5.flex.justify-center
             %button{:onclick => "playAudio()", class: "btn btn-primary w-fit"} Escuchar
-            = link_to 'Coninuar', results_path, class: 'ml-3 btn btn-primary w-fit'
+            = link_to 'Continuar', results_path, class: 'ml-3 btn btn-primary w-fit'
         - else
           = link_to 'Continuar', question_path(@next_question), class: 'btn btn-primary w-fit'
 - if @next_question.nil?
