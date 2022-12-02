@@ -274,10 +274,10 @@ Question.create(
   code: 'Q1L1C3',
   correct_answer: 'c',
   options: {
-    'a' => "<span>Primero:</span><span>Una anciana tenía dos nietos</span>",
-    'b' => "<span>Luego:</span><span>Falleció</span>",
-    'c' => "<span>Después:</span><span>San Pedro la</span>",
-    'd' => "<span>Finalmente:</span><span>Sus nietos no la</span>"
+    'a' => "Primero: Una anciana tenía dos nietos",
+    'b' => "Luego: Falleció",
+    'c' => "Después: San Pedro la",
+    'd' => "Finalmente: Sus nietos no la"
   },
   text: 'De acuerdo a la lectura anterior como se desarrolló la leyenda de la bola de fuego o Candileja:',
   level: Level.find_by(code: 'L1C3')
