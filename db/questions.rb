@@ -89,9 +89,9 @@ Question.create(
     'a' => 'Que se arrepiente de lo vivido',
     'b' => 'Que realizara una máquina del tiempo',
     'c' => 'Que si regresara a su niñez haría lo que su madre lo mandara',
-    'd' => 'que andaría descalzo y corriendo por un alimento'
+    'd' => 'Que andaría descalzo y corriendo por un alimento'
   },
-  text: "<span>Lee la siguiente estrofa de la cancion</span><span>Si hubiese alguna manera</span><span>De retroceder el tiempo</span><span>Madre y si tú me mandaras</span><span>De nuevo a que nos prestaran</span><span>Algo para el alimento,</span><span>Te lo juro madre mía</span><span>Preciso en este momento,</span><span>Me veo corriendo descalzo</span><span>Sin camisa contra el viento</span><span>¿Qué se puede concluir de este párrafo?</span>",
+  text: "<p>Lee la siguiente estrofa de la cancion</p><span>Si hubiese alguna manera</span><span>De retroceder el tiempo</span><span>Madre y si tú me mandaras</span><span>De nuevo a que nos prestaran</span><span>Algo para el alimento,</span><span>Te lo juro madre mía</span><span>Preciso en este momento,</span><span>Me veo corriendo descalzo</span><span>Sin camisa contra el viento</span><p>¿Qué se puede concluir de este párrafo?</p>",
   level: Level.find_by(code: 'L2C5')
 )
 

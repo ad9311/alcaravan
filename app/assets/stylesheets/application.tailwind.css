@@ -208,9 +208,9 @@
     @apply block pb-4;
   }
 
-  .question-option span:first-child {
+  /* .question-option span:first-child {
     @apply font-semibold;
-  }
+  } */
 
   .img-presentation {
     position: absolute;
@@ -230,5 +230,23 @@
 
   .img-justification img {
     width: 40rem;
+  }
+
+  .lyrics div {
+    text-align: center !important;
+    column-count: 3;
+  }
+
+  .lyrics h1:first-child {
+    text-align: center;
+    @apply my-5 text-2xl text-neutral-3;
+  }
+
+  .lyrics p {
+    @apply mb-4;
+  }
+
+  .lyrics span {
+    display: block;
   }
 }
