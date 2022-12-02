@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1 or /comments/1.json
   def show
+    redirect_to comments_path
   end
 
   # GET /comments/new

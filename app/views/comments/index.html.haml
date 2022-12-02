@@ -2,14 +2,15 @@
   .card-header
     %h1.text-center.comic.font-bold.text-4xl.mb-16= "Foro #{current_user.user_course}"
   .card-body.grid.grid-cols-1.gap-5
-    - @comments.each do |comment|
-      .comment
-        .comment-title.underline= "#{comment.user.full_name.titleize}  (#{t(comment.user.role)})"
-        .comment-content= comment.content
-        -# %td= link_to 'Show', comment
-        -# %td= link_to 'Edit', edit_comment_path(comment)
-        -# %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
-
-    %br
-
-    = link_to 'Nuevo comentario', new_comment_path, class: "btn btn-primary w-fit"
+    .overflow-y-auto{ class: "max-h-[400px]" }
+      - @comments.each do |comment|
+        - course = " curso #{comment.user.my_course.number}°" if comment.user.student? 
+        .comment.my-2
+          .flex.items-center.justify-between
+            .comment-title.underline.text-neutral-3= "#{comment.user.full_name.capitalize.capitalize.titleize}  (#{t(comment.user.role)}#{course})"
+            .text-xs= "#{comment.created_at.strftime('%m/%d/%Y')}"
+          .comment-content= comment.content
+          -# %td= link_to 'Show', comment
+          -# %td= link_to 'Edit', edit_comment_path(comment)
+          -# %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
+    = link_to 'Nuevo comentario', new_comment_path, class: "my-0 ml-12 btn btn-primary w-fit"
