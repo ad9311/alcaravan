@@ -254,4 +254,30 @@
   #alcaravan {
     transition: all ease-in-out 5s;
   }
+
+  .comment {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .comment-title {
+
+  }
+
+  .hidden-form-comment{
+    display: none;
+  }
+
+  .comment-content {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  commment-area {
+    border: 1px solid lightgray;
+  }
+
 }

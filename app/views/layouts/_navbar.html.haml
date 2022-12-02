@@ -7,7 +7,7 @@
         %span.font-bold.cursive.text-3xl Alcaraván
   %div
     - if current_user.student?
-      %ul.grid.grid-cols-2
+      %ul.grid.grid-cols-3
         %li.link.self-end
           = link_to about_index_path, class: "mt-1 text-xs text-neutral-500" do
             = image_tag "home.svg", class: "icon mx-auto"
@@ -16,8 +16,12 @@
           = link_to questions_path, class: "mt-1 text-xs text-neutral-500" do
             = image_tag "book.svg", class: "icon mx-auto"
             %span= "Preguntas"
+        %li.link.self-end
+          = link_to comments_path, class: "mt-1 text-xs text-neutral-500" do
+            = image_tag "text.svg", class: "icon mx-auto"
+            %span= "Foro"
     - else
-      %ul.grid.grid-cols-3
+      %ul.grid.grid-cols-2
         %li.link.self-end
           = link_to about_index_path, class: "mt-1 text-xs text-neutral-500" do
             = image_tag "home.svg", class: "icon mx-auto"
@@ -30,6 +34,10 @@
           = link_to levels_path, class: "mt-1 text-xs text-neutral-500" do
             = image_tag "text.svg", class: "icon mx-auto"
             %span= "Lecturas"
+        %li.link.self-end
+          = link_to comments_path, class: "mt-1 text-xs text-neutral-500" do
+            = image_tag "text.svg", class: "icon mx-auto"
+            %span= "Foro"
 
   .flex.items-center
     .mr-5.flex.flex-col.items-center
