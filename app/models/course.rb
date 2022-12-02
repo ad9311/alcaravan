@@ -20,6 +20,7 @@ class Course < ApplicationRecord
   has_many :course_students, dependent: :destroy
   has_many :students, through: :course_students, source: :user
   has_many :course_teachers, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def number
     code.sub(/[A-Z]/, '').chars.first

@@ -396,7 +396,7 @@ Question.create(
     'c' => 'El narrador de la historia',
     'd' => 'Es el cantante'
   },
-  text: '¿Cuál es la relación entre el título de la cancion y el cantante cantada?',
+  text: '¿Cuál es la relación entre el título de la cancion y el cantante?',
   level: Level.find_by(code: 'L2C3')
 )
 
@@ -456,7 +456,7 @@ Question.create(
   code: 'Q5L3C3',
   correct_answer: 'a',
   options: {
-    'a' => 'Que la elaboración del chocolate es un proceso de elaborado y dedicado',
+    'a' => 'Que la produccion de chocolate es un proceso elaborado y dedicado',
     'b' => 'Que hay diferentes clases de cacao',
     'c' => 'Que algunos chocolates llevan mas proceso que otros',
     'd' => 'Que la elaboración del cacao es una tarea sencilla.'
