@@ -8,7 +8,7 @@
 - if @level&.video_url
   %div
     .image-question
-      %iframe.mx-auto{allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", src: "https://www.youtube.com/embed/1xrZoBFNR7Y?controls=0", title: "YouTube video player", class: "w-full h-96"}
+      %iframe.mx-auto{allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", src: @level&.video_url, title: "YouTube video player", class: "w-full h-96"}
     .image-source
       %span.italic Tomado de:
       %a(href="#{@level.video_source}")= "#{@level.video_source}"
