@@ -21,7 +21,7 @@ Level.create(
 Level.create(
   code: 'L3C5',
   image_source: 'https://www.paho.org/es/documentos/afiche-sintomas-dengue',
-  image_url: 'https://www.paho.org/sites/default/files/styles/document_thumb/public/pdfpreview/71341-Afiche%20OPS%20Urgente%20el%20Dengue%20puede%20ser%20mortal%2017x22.png?itok=-E-q4aSx',
+  image_url: 'https://lh4.googleusercontent.com/8OcAMV-4hoqntbXArFyf9Zvi7KPmk4Ql9pYe2spKqdSIcjYRzHshR1CVm3-hvBL26t8=w2400',
   course: Course.all.find_by(code: 'C5A')
 )
 
