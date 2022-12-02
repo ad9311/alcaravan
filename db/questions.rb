@@ -274,10 +274,10 @@ Question.create(
   code: 'Q1L1C3',
   correct_answer: 'c',
   options: {
-    'a' => "Primero: Una anciana tenía dos nietos",
-    'b' => "Luego: Falleció",
-    'c' => "Después: San Pedro la",
-    'd' => "Finalmente: Sus nietos no la"
+    'a' => "<div><span>Primero:</span><span>Una anciana tenía dos nietos</span></div><div><span>Luego: </span><span>Falleció</span></div><div><span>Después: </span><span>San Pedro la condeno a purgar sus penas convertida en una bola de fuego</span></div><div><span>Finalmente: </span><span>Sus nietos no la respetaban y ella los malcriaba.</span></div>",
+    'b' => "<div><span>Primero: </span><span>Una anciana fallece</span></div><div><span>Luego: </span><span>Tenía dos nietos que no la respetaban.</span></div><div><span>Después: </span><span>Malcrió a sus nietos</span></div><div><span>Finalmente: </span><span>San Pedro la condeno a purgar sus penas convertida en una bola de fuego</span></div>",
+    'c' => "<div><span>Primero: </span><span>Una anciana tenía dos nietos</span></div><div><span>Luego: </span><span>Sus nietos no la respetaban y ella los malcriaba.</span></div><div><span>Después: </span><span>Falleció</span></div><div><span>Finalmente: </span><span>San Pedro la condeno a purgar sus penas convertida en una bola de fuego</span></div>",
+    'd' => "<div><span>Primero: </span><span>San Pedro la condeno a purgar sus penas convertida en una bola de fuego</span></div><div><span>Luego: </span><span>Sus nietos no la respetaban y ella los malcriaba.</span></div><div><span>Después: </span><span>Falleció</span></div><div><span>Finalmente: </span><span>Los nietos se arrepintieron del maltrato a su abuela.</span></div>"
   },
   text: 'De acuerdo a la lectura anterior como se desarrolló la leyenda de la bola de fuego o Candileja:',
   level: Level.find_by(code: 'L1C3')
