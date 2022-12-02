@@ -3,13 +3,50 @@
     .con
       %h1.mb-3.text-neutral-3.text-2xl.text-center.comic= t("discover.L#{@level.number}.title")
       %div
-        = image_tag "discover_L#{@level.number}", class: "m-auto"
+        - if @next_question.nil?
+          %h1.mb-3.text-3xl.font-bold.text-center ¡Felicidades has terminado!
+          -# %p.mb-5.text-center Has descubierto a El Alcaraván
+        = image_tag "discover_L#{@level.number}", class: "m-auto opacity-0", id: "alcaravan"
+
       .image-source
-        %span.italic= "Tomado de: "
-        %a{ href: t("discover.L#{@level.number}.image_source") }= t("discover.L#{@level.number}.image_source")
-      %p.mt-3.text-justify.comic= t("discover.L#{@level.number}.text")
+        - unless @next_question.nil? 
+          %span.italic= "Tomado de: "
+          %a{ href: t("discover.L#{@level.number}.image_source") }= t("discover.L#{@level.number}.image_source")
+      %p.mt-3= t("discover.L#{@level.number}.text")
       .mt-5.flex.justify-center
         - if @next_question.nil?
-          = link_to 'Coninuar', results_path, class: 'btn btn-primary w-fit'
+          .mt-5.flex.justify-center
+            %button{:onclick => "playAudio()", class: "btn btn-primary w-fit"} Escuchar
+            = link_to 'Coninuar', results_path, class: 'ml-3 btn btn-primary w-fit'
         - else
           = link_to 'Continuar', question_path(@next_question), class: 'btn btn-primary w-fit'
+- if @next_question.nil?
+  :javascript
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const image = document.getElementById('alcaravan');
+        if (image) {
+          image.classList.replace('opacity-0', 'opacity-1');
+        }
+      }, 50);
+    }, true);
+
+:javascript
+  function playAudio() {
+    if (!document.getElementById('audio')) {
+    const audio = document.createElement('audio');
+    audio.setAttribute('src', 'alcaravan.mp3');
+    audio.setAttribute('autoplay', 'autoplay');
+    audio.setAttribute('muted', 'muted');
+    audio.id = 'audio';
+    document.body.appendChild(audio);
+    audio.play();
+    }
+  };
+
+:javascript
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      //playAudio();
+    }, '500');
+  }, true)

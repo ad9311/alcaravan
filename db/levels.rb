@@ -58,7 +58,7 @@ Level.create(
 Level.create(
   code: 'L4C3',
   video_source: 'https://youtu.be/1MEu-on29Ao',
-  video_url: 'https://youtu.be/1MEu-on29Ao',
+  video_url: 'https://www.youtube.com/embed/1MEu-on29Ao',
   course: Course.all.find_by(code: 'C3A')
 )
 

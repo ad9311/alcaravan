@@ -249,4 +249,8 @@
   .lyrics span {
     display: block;
   }
+
+  #alcaravan {
+    transition: all ease-in-out 5s;
+  }
 }
