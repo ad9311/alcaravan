@@ -36,7 +36,11 @@
       - unless question.code.include?('Q1L1')
         = link_to 'Atrás', previous_question_path(id: question), class: 'btn btn-primary w-fit'
       = f.submit 'Siguiente', class: 'ml-3 btn btn-primary w-fit'
+#number.opacity-0= question.number
 :javascript
   setTimeout(() => {
-    document.getElementById('question').scrollIntoView({ behavior: 'smooth'});
+    const number = document.getElementById('number').innerHTML
+    if (number !== '1') {
+      document.getElementById('question').scrollIntoView({ behavior: 'smooth'});
+    }
   }, 200);

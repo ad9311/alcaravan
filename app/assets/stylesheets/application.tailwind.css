@@ -255,16 +255,29 @@
     transition: all ease-in-out 5s;
   }
 
+  #results {
+    transition: all ease-in-out 3s;
+  }
+
+  .vanish {
+    opacity: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .shrink {
+    height: 25%;
+  }
+
+  #display-results {
+    transition: all ease-in-out 1s;
+  }
   .comment {
     background-color: white;
     border-radius: 15px;
     padding: 1.5rem;
     margin-left: 3rem;
     margin-right: 3rem;
-  }
-
-  .comment-title {
-
   }
 
   .hidden-form-comment{

@@ -26,6 +26,8 @@ class QuestionsController < ApplicationController
 
     @level = @question.level
     @count = current_user.answers(@level)
+    @next_question = Question.next(@question)
+    redirect_to(partial_results_path(id: @level)) and return if @count == 5
   end
 
   def submit
