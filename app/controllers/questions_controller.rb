@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   include ActionView::RecordIdentifier
 
+  before_action :authenticateStudent
   before_action :set_question, only: %i[show back]
   before_action :question_params, only: %i[submit resubmit]
   before_action :set_level, only: %i[partial_results reset_level discover]
@@ -61,7 +62,11 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def partial_results; end
+  def partial_results
+    @course = @level.course
+    @correct_answers = current_user.correct_answers(@level)
+    redirect_to(questions_path) and return if @course.id != current_user.my_course.id
+  end
 
   def reset_level
     current_user.destroy_question_answers(@level)
@@ -75,7 +80,9 @@ class QuestionsController < ApplicationController
     @next_question = @next_level.questions.order(:code).first unless @next_level.nil?
   end
 
-  def results; end
+  def results
+    redirect_to(questions_path) and return unless all_questions_answered
+  end
 
   def error; end
 
@@ -114,5 +121,9 @@ class QuestionsController < ApplicationController
 
   def all_questions_answered
     current_user.question_answers.count == 20
+  end
+
+  def authenticateStudent
+    redirect_to root_path if current_user.teacher?
   end
 end

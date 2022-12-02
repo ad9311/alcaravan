@@ -5,8 +5,9 @@
       %div
         - if @next_question.nil?
           %h1.mb-3.text-3xl.font-bold.text-center ¡Felicidades has terminado!
-          -# %p.mb-5.text-center Has descubierto a El Alcaraván
-        = image_tag "discover_L#{@level.number}", class: "m-auto opacity-0", id: "alcaravan"
+          = image_tag "discover_L#{@level.number}", class: "m-auto opacity-0", id: "alcaravan"
+        - else
+          = image_tag "discover_L#{@level.number}", class: "m-auto"
 
       .image-source
         - unless @next_question.nil?
@@ -22,14 +23,12 @@
           = link_to 'Continuar', question_path(@next_question), class: 'btn btn-primary w-fit'
 - if @next_question.nil?
   :javascript
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        const image = document.getElementById('alcaravan');
-        if (image) {
-          image.classList.replace('opacity-0', 'opacity-1');
-        }
-      }, 50);
-    }, true);
+    setTimeout(() => {
+      const image = document.getElementById('alcaravan');
+      if (image) {
+        image.classList.replace('opacity-0', 'opacity-1');
+      }
+    }, 50);
 
 :javascript
   function playAudio() {
@@ -43,10 +42,3 @@
     audio.play();
     }
   };
-
-:javascript
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      //playAudio();
-    }, '500');
-  }, true)
