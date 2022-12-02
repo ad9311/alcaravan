@@ -36,6 +36,6 @@
       %span.comic.font-bold= current_user.full_name.titleize
       %span.comic.text-xs= t(current_user.role)
     .link
-      = button_to destroy_user_session_path, method: :delete, class: "icon" do
+      = link_to dashboard_index_path, class: "icon" do
         = image_tag "logout.svg"
         %span.text-xs.text-neutral-500 Salir
