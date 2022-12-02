@@ -14,7 +14,7 @@
       %a(href="#{@level.video_source}")= "#{@level.video_source}"
 - if @level&.text
   .mt-10
-    %div{ class: @level&.video_url && 'lyrics' }
+    .text-question{ class: @level&.video_url && 'lyrics' }
       = @level.text.html_safe
     .text-source.mt-3
       %span.italic Tomado de:
@@ -31,7 +31,7 @@
           = f.radio_button :answer, k, checked: true, required: true
         - else
           = f.radio_button :answer, k, required: true
-        = f.label :answer, v.html_safe, class: "pl-1 question-option"
+        = f.label :answer, v.html_safe, class: "pl-1"
     .mt-5.flex.justify-center
       - unless question.code.include?('Q1L1')
         = link_to 'Atrás', previous_question_path(id: question), class: 'btn btn-primary w-fit'

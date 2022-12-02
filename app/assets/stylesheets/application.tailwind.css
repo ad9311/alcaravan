@@ -169,7 +169,7 @@
   }
 
   .text-question span {
-    @apply block pb-4 text-center;
+    @apply block pb-4;
   }
 
   .text-question span:first-child {

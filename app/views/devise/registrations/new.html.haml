@@ -16,11 +16,11 @@
         = f.text_field :username, placeholder: 'UserName'
       .field
         = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Correo'
-      .field.hidden
-        - if @minimum_password_length
-          %em
-            (#{@minimum_password_length} characters minimum)
-        %br/
+      .field
+        -# - if @minimum_password_length
+        -#   %em
+        -#     (#{@minimum_password_length} characters minimum)
+        -# %br/
         = f.password_field :password, autocomplete: "new-password", placeholder: 'Contraseña'
       .field
         = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirmar contraseña'
