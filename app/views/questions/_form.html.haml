@@ -20,10 +20,10 @@
       %span.italic Tomado de:
       %a(href="#{@level.text_source.html_safe}")= "#{@level.text_source.html_safe}"
 .mt-5
-  %h2.mb-5.text-lg.question-level.font-bold.text-neutral-3= "(#{question.number}) - #{question.text.html_safe}"
+  %h2.mb-5.text-lg.question-level.font-bold.text-neutral-3#question= "(#{question.number}) - #{question.text.html_safe}"
   = form_with model: question, url: @answer.nil? ? submit_question_path : resubmit_question_path, method: @answer.nil? ? :post : :patch do |f|
     = f.hidden_field :id
-    .font-bold= question.correct_answer
+    -# .font-bold= question.correct_answer
     - question.options.each_pair do |k, v|
       .form-fields.mb-5
         %span.font-bold.text-neutral-3.pr-1= "(#{k.upcase})"
@@ -36,3 +36,7 @@
       - unless question.code.include?('Q1L1')
         = link_to 'Atrás', previous_question_path(id: question), class: 'btn btn-primary w-fit'
       = f.submit 'Siguiente', class: 'ml-3 btn btn-primary w-fit'
+:javascript
+  setTimeout(() => {
+    document.getElementById('question').scrollIntoView({ behavior: 'smooth'});
+  }, 200);
