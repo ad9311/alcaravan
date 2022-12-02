@@ -5,9 +5,9 @@
       %div
         - if @next_question.nil?
           %h1.mb-3.text-3xl.font-bold.text-center ¡Felicidades has terminado!
-          = image_tag "discover_L#{@level.number}", class: "m-auto opacity-0", id: "alcaravan"
+          = image_tag "discover_L#{@level.number}.png", class: "m-auto opacity-0", id: "alcaravan"
         - else
-          = image_tag "discover_L#{@level.number}", class: "m-auto"
+          = image_tag "discover_L#{@level.number}.png", class: "m-auto"
 
       .image-source
         - unless @next_question.nil?
