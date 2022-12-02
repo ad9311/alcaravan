@@ -1,13 +1,13 @@
 .card
   .card-body
     .con
-      %h1.mb-3.text-neutral-3.text-lg.text-center= t("discover.L#{@level.number}.title")
+      %h1.mb-3.text-neutral-3.text-2xl.text-center.comic= t("discover.L#{@level.number}.title")
       %div
         = image_tag "discover_L#{@level.number}", class: "m-auto"
       .image-source
         %span.italic= "Tomado de: "
         %a{ href: t("discover.L#{@level.number}.image_source") }= t("discover.L#{@level.number}.image_source")
-      %p.mt-3= t("discover.L#{@level.number}.text")
+      %p.mt-3.text-justify.comic= t("discover.L#{@level.number}.text")
       .mt-5.flex.justify-center
         - if @next_question.nil?
           = link_to 'Coninuar', results_path, class: 'btn btn-primary w-fit'

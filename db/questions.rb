@@ -102,7 +102,7 @@ Question.create(
     'a' => 'A su vecina',
     'b' => 'A la pobreza de un niño',
     'c' => 'A las madres de Colombia',
-    'd' => 'Al a madre del autor'
+    'd' => 'A la madre del autor'
   },
   text: 'De acuerdo al contenido de la historia, ¿a quién va dirigida esta cancion?',
   level: Level.find_by(code: 'L2C5')
@@ -158,7 +158,7 @@ Question.create(
     'c' => 'El texto contradice lo que se presenta en la imagen',
     'd' => 'El texto critica las acciones que se señalan en la imagen'
   },
-  text: "<span>Observa la imagen y lee el texto que la acompaña</span><img src='#' alt='image' /><span>¿Cuál de las siguientes opciones describe la relación entre la imagen anterior y el texto que lo acompaña?</span>",
+  text: "<h1>Observa la imagen y lee el texto que la acompaña</h1><img src='https://lh3.googleusercontent.com/BMGUmpLQ06QDVhRYTyjzxZkVMiD6AbHAk2Fk3hOLZkdGLLVqOVEXew9qGHiz9BKuSfI=w2400' /><h1>¿Cuál de las siguientes opciones describe la relación entre la imagen anterior y el texto que lo acompaña?</h1>",
   level: Level.find_by(code: 'L3C5')
 )
 
