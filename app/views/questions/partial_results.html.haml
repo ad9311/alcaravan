@@ -1,15 +1,14 @@
 .card
   .card-body
     .con
-      - correct_answers = current_user.correct_answers(@level)
       .card-header.text-center
         %h1.text-xl= "Resultados del nivel #{@level.number}"
       .text-center
-        %span.text-lg= "Preguntas correctas: #{correct_answers}/5"
+        %span.text-lg= "Preguntas correctas: #{@correct_answers}/5"
       .mt-5.flex.flex-col.items-center
         .mb-3
           = image_tag "llanerito.png", class: "w-[100px]"
-        - if correct_answers >= 4
+        - if @correct_answers >= 4
           %p.mb-5 ¡Muy bien haz logrado avanzar!
           = link_to 'Siguiente', discover_path(id: @level), class: "btn-secondary"
         - else
