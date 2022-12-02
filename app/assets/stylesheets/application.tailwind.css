@@ -68,7 +68,8 @@
   }
 
   .wrapper input {
-    @apply my-3 mx-0 border-none p-3 rounded-2xl w-full text-base;
+    margin: 0.7rem 0 !important;
+    @apply mx-0 border-none p-3 rounded-2xl w-full text-base;
   }
 
   .wrapper input[type=checkbox] {

@@ -13,7 +13,7 @@
       .field
         = f.text_field :last_name, placeholder: 'Apellido'
       .field
-        = f.text_field :username, placeholder: 'UserName'
+        = f.text_field :username, placeholder: 'Usuario'
       .field
         = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Correo'
       .field
@@ -26,7 +26,7 @@
         = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirmar contraseña'
       .field
         = select_tag "course_id", options_from_collection_for_select(Course.all, "id", "name"), class: "select"
-      .field.flex.mb-9.justify-evenly
+      .field.flex.mb-8.justify-evenly
         %div
           .labelr= f.label :role, t("teacher")
           .labelrb.w-1.h-1= f.radio_button :role, 'teacher', {}
