@@ -33,12 +33,12 @@
 :javascript
   function playAudio() {
     if (!document.getElementById('audio')) {
-    const audio = document.createElement('audio');
-    audio.setAttribute('src', 'alcaravan.mp3');
-    audio.setAttribute('autoplay', 'autoplay');
-    audio.setAttribute('muted', 'muted');
-    audio.id = 'audio';
-    document.body.appendChild(audio);
-    audio.play();
+      const audio = document.createElement('audio');
+      audio.setAttribute('src', 'alcaravan.mp3');
+      audio.setAttribute('autoplay', 'autoplay');
+      audio.setAttribute('muted', 'muted');
+      audio.id = 'audio';
+      document.body.appendChild(audio);
+      audio.play();
     }
   };
