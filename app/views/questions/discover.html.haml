@@ -9,7 +9,7 @@
         = image_tag "discover_L#{@level.number}", class: "m-auto opacity-0", id: "alcaravan"
 
       .image-source
-        - unless @next_question.nil? 
+        - unless @next_question.nil?
           %span.italic= "Tomado de: "
           %a{ href: t("discover.L#{@level.number}.image_source") }= t("discover.L#{@level.number}.image_source")
       %p.mt-3= t("discover.L#{@level.number}.text")
