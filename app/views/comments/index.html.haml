@@ -1,0 +1,15 @@
+.card
+  .card-header
+    %h1.text-center.comic.font-bold.text-4xl.mb-16= "Foro #{current_user.user_course}"
+  .card-body.grid.grid-cols-1.gap-5
+    - @comments.each do |comment|
+      .comment
+        .comment-title.underline= "#{comment.user.full_name.titleize}  (#{t(comment.user.role)})"
+        .comment-content= comment.content
+        -# %td= link_to 'Show', comment
+        -# %td= link_to 'Edit', edit_comment_path(comment)
+        -# %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
+
+    %br
+
+    = link_to 'Nuevo comentario', new_comment_path, class: "btn btn-primary w-fit"

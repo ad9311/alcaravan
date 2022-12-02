@@ -1,0 +1,21 @@
+= form_for @comment do |f|
+  - if @comment.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
+      %ul
+        - @comment.errors.full_messages.each do |message|
+          %li= message
+  %div.hidden-form-comment
+    .field
+      = f.text_field :user_id, value: current_user.id
+    -if current_user.teacher?
+      .field
+        = f.text_field :course_id, value: current_user.course_teacher.course.id
+    -else
+      .field
+        = f.text_field :course_id, value: current_user.course_student.course.id
+  .field.grid.grid-cols-1.gap-4
+    = f.label :content, "Comentario"
+    = f.text_area :content, class: "commment-area"
+  .actions
+    = f.submit 'Comentar', class: "btn btn-primary w-fit"

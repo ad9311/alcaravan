@@ -36,6 +36,7 @@ class User < ApplicationRecord
   has_many :question_answers, dependent: :destroy
   has_one :course_teacher, dependent: :destroy
   has_one :course, through: :course_teacher, source: :course
+  has_many :comments, dependent: :destroy
 
   enum role: {
     student: 0,
@@ -73,6 +74,14 @@ class User < ApplicationRecord
   def destroy_question_answers(level)
     level.questions.each do |question|
       question.question_answers.where(user_id: id).destroy_all
+    end
+  end
+
+  def user_course
+    if self.teacher?
+      self.course_teacher.course.name
+    else
+      self.course_student.course.name
     end
   end
 end
