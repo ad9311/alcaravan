@@ -12,5 +12,7 @@
           %p.mb-5 ¡Muy bien haz logrado avanzar!
           = link_to 'Siguiente', discover_path(id: @level), class: "btn-secondary"
         - else
+          .balloon
+            = image_tag "#{@level.code}.svg", alt: 'globo', class: ''
           %p.mb-5 ¡Vuelve a intentarlo, puedes lograrlo!
           = button_to 'Reintentar', reset_level_path(id: @level), method: :delete, class: "btn-secondary"

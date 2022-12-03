@@ -268,7 +268,7 @@
   }
 
   .hidden-form-comment{
-    display: none;
+    @apply hidden;
   }
 
   .comment-content {
