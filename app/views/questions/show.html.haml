@@ -1,6 +1,7 @@
 .card
-  .card-body
+  .card-body.relative
+    .card-header.flex.-rotate-12.absolute
+      %h1.text-5xl.comic Nivel
+      = image_tag "level_#{@level.number}.svg", class: "ml-2 icon"
     .con
-      .card-header.text-center
-        %h1= "Nivel #{@level.number}"
       = render "form", question: @question

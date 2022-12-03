@@ -3,12 +3,8 @@
     .con
       .card-header.text-center.relative
         %h1.text-4xl.comic.relative.z-10= @course.name
-        - if @course.number.to_i == 3
-          .class-number
-            = image_tag "three.svg", class: "w-[100px]"
-        - else
-          .class-number
-            = image_tag "five.svg", class: "w-[100px]"
+        .class-number
+          = image_tag "course_#{@course.number}.svg", class: "w-[100px]"
       .text-center.mt-12
         %span Preguntas contestadas:
         %span= "#{current_user.answers(@level)}/5"
