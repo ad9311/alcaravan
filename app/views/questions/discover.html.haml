@@ -18,10 +18,10 @@
         - if @next_question.nil?
           .mt-5.flex.justify-center
             %button{:onclick => "playAudio()", class: "mr-12 w-fit text-center link-2"}
-              = image_tag "play.svg", class: "icon m-auto"
+              = image_tag "play.svg", class: "icon m-auto animated-play"
               %span.text-xs.font-bold.text-indigo-600 Escuchar a El Alcaraván
             = link_to results_path, class: "w-fit text-center link-2" do
-              = image_tag "next.svg", class: "icon m-auto"
+              = image_tag "next.svg", class: "icon m-auto animated-back"
               %span.text-xs.font-bold.text-indigo-600 Siguiente
         - else
           -# = link_to 'Continuar', question_path(@next_question), class: 'btn btn-primary w-fit'

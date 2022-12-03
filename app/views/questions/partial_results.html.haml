@@ -23,11 +23,11 @@
             = image_tag "llanerito.png", class: "boy", id: "alcaravan"
           %p.text-xl.my-5 ¡Vuelve a intentarlo, puedes lograrlo!
           = button_to reset_level_path(id: @level), class: "w-fit text-center link-2", method: :delete do
-            = image_tag "next.svg", class: "icon m-auto"
+            = image_tag "next.svg", class: "icon m-auto animated-next"
             %span.text-xs.font-bold.text-indigo-600 Siguiente
       .mt-5.flex.justify-center
         %button{:onclick => "showResults()", class: "w-fit text-center link-2", id: "display-results"}
-          = image_tag "question.svg", class: "icon m-auto"
+          = image_tag "question.svg", class: "icon m-auto animated-play"
           %span.text-xs.font-bold.text-indigo-600 Descubrir resultados
 :javascript
   function showResults() {

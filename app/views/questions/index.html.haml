@@ -11,6 +11,6 @@
         .font-bold= "Pregunta ##{@question.number} - Nivel ##{@level.number}"
       .flex.items-center.w-fit.m-auto
         .mt-5
-          = link_to question_path(@question), class: "w-fit text-center link-2" do
+          = link_to question_path(@question), class: "w-fit text-center link-2 animated-next" do
             = image_tag "next.svg", class: "icon m-auto"
             %span.text-xs.font-bold.text-indigo-600 Continuar

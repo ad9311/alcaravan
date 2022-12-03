@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   # Students
   resources :students
+  delete 'reset_answers', to: 'students#reset_answers'
 
   # Levels
   resources :levels

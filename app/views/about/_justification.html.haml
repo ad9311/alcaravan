@@ -11,8 +11,8 @@
         %p.text-justify.text-2xl.mb-8= t("about.justification.parragraph_#{i}")
 .mt-5.flex.justify-between
   = button_to about_paginate_path(page: "presentation"), class: "w-fit text-center link-2" do
-    = image_tag "back.svg", class: "icon m-auto"
+    = image_tag "back.svg", class: "icon m-auto animated-back"
     %span.text-xs.font-bold.text-indigo-600 Atrás
   = button_to about_paginate_path(page: "skills"), class: "w-fit text-center link-2" do
-    = image_tag "next.svg", class: "icon m-auto"
+    = image_tag "next.svg", class: "icon m-auto animated-back"
     %span.text-xs.font-bold.text-indigo-600 Siguiente

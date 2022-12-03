@@ -17,5 +17,5 @@
               .text-xs= "#{comment.created_at.strftime('%m/%d/%Y')}"
             .comment-content= comment.content
     = link_to new_comment_path, class: "ml-12 w-fit text-center link-2" do
-      = image_tag "plus.svg", class: "icon m-auto"
+      = image_tag "plus.svg", class: "icon m-auto animated-plus"
       %span.text-xs.font-bold.text-indigo-600 Nuevo comentario

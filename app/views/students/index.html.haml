@@ -4,14 +4,15 @@
       %h2.text-3xl.comic Estudiantes
       = image_tag "course_#{current_user.course.number}.svg", class: "ml-1 icon"
     .grid.grid-cols-12.font-semibold.text-base.py-4
-      .col-span-4.text-left Nombre
+      .col-span-2.text-left Nombre
       .col-span-2.text-left Nivel 1
       .col-span-2.text-left Nivel 2
       .col-span-2.text-left Nivel 3
       .col-span-2.text-left Nivel 4
+      .col-span-2.text-left
     -@students.map do |student|
       .grid.grid-cols-12.py-4.px-2.my-3.rounded.bg-yellow-100.border-2.border-neutral-900.text-neutral-3{class: 'hover:bg-yellow-200'}
-        .col-span-4.text-left.font-bold= student.full_name.capitalize
+        .col-span-2.text-left.font-bold= student.full_name.capitalize
         - student.course_student.course.levels.each do |level|
           -if student.answers(level) > 0
             .col-span-2.text-left
@@ -22,3 +23,9 @@
           -else
             .col-span-2.text-left
               %span N/A
+        -if student.question_answers.empty?
+          .col-span-2
+        -else
+          .col-span-2.text-left
+            = button_to reset_answers_path(id: student), class: "w-fit text-center link-2", method: :delete do
+              = image_tag "reset.svg", class: "icon m-auto animated-next"
