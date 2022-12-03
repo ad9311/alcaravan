@@ -299,4 +299,16 @@
   .levels-body {
     @apply px-60;
   }
+
+  .image-llanerito {
+    @apply flex justify-center flex-col;
+  }
+
+  .image-llanerito .balloon {
+    @apply w-[30rem];
+  }
+
+  .image-llanerito .boy{
+    @apply w-40;
+  }
 }
