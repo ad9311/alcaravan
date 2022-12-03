@@ -11,15 +11,15 @@
         %ul.grid.grid-cols-3.gap-3
           %li.link.self-end
             = link_to about_index_path, class: "mt-1 text-center text-xs" do
-              = image_tag "home.svg", class: "icon mx-auto animated-icon"
+              = image_tag "home.svg", class: "icon mx-auto animated-icon animated-icon-step"
               %span.text-indigo-600.font-bold= "Inicio"
           %li.link.self-end
             = link_to questions_path, class: "mt-1 text-center text-xs" do
-              = image_tag "book.svg", class: "icon mx-auto animated-icon"
+              = image_tag "book.svg", class: "icon mx-auto animated-icon animated-icon-step"
               %span.text-indigo-600.font-bold= "Preguntas"
           %li.link.self-end
             = link_to comments_path, class: "mt-1 text-center text-xs" do
-              = image_tag "forum.svg", class: "icon mx-auto animated-icon"
+              = image_tag "forum.svg", class: "icon mx-auto animated-icon animated-icon-step"
               %span.text-indigo-600.font-bold= "Foro"
       - else
         %ul.grid.grid-cols-4.gap-3
