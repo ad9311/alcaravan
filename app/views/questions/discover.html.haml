@@ -4,7 +4,7 @@
       %h1.mb-3.text-neutral-3.text-2xl.text-center.comic= t("discover.L#{@level.number}.title")
       %div
         - if @next_question.nil?
-          %h1.mb-3.text-3xl.font-bold.text-center ¡Felicidades has terminado!
+          %h1.mb-3.text-3xl.text-center.comic ¡Felicidades has terminado!
           = image_tag "discover_L#{@level.number}.png", class: "m-auto opacity-0", id: "alcaravan"
         - else
           = image_tag "discover_L#{@level.number}.png", class: "m-auto"
@@ -17,10 +17,17 @@
       .mt-5.flex.justify-center
         - if @next_question.nil?
           .mt-5.flex.justify-center
-            %button{:onclick => "playAudio()", class: "btn btn-primary w-fit"} Escuchar
-            = link_to 'Continuar', results_path, class: 'ml-3 btn btn-primary w-fit'
+            %button{:onclick => "playAudio()", class: "mr-12 w-fit text-center link-2"}
+              = image_tag "play.svg", class: "icon m-auto"
+              %span.text-xs.font-bold.text-indigo-600 Escuchar a El Alcaraván
+            = link_to results_path, class: "w-fit text-center link-2" do
+              = image_tag "next.svg", class: "icon m-auto"
+              %span.text-xs.font-bold.text-indigo-600 Siguiente
         - else
-          = link_to 'Continuar', question_path(@next_question), class: 'btn btn-primary w-fit'
+          -# = link_to 'Continuar', question_path(@next_question), class: 'btn btn-primary w-fit'
+          = link_to question_path(@next_question), class: "w-fit text-center link-2" do
+            = image_tag "next.svg", class: "icon m-auto"
+            %span.text-xs.font-bold.text-indigo-600 Siguiente
 - if @next_question.nil?
   :javascript
     setTimeout(() => {
