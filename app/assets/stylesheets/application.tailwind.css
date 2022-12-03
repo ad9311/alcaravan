@@ -291,4 +291,12 @@
   .comment-area {
     border: 1px solid lightgray !important;
   }
+
+  .levels-header {
+    @apply grid grid-cols-4 font-semibold text-base py-4;
+  }
+
+  .levels-body {
+    @apply px-60;
+  }
 }

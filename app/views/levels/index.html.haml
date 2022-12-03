@@ -1,8 +1,8 @@
 .card
   .card-header
-    %h2= "Niveles y Guías Grado #{current_user.course.name}"
-  .card-body
-    .grid.grid-cols-3.font-semibold.text-base.py-4
+    %h2= "Niveles y Guías Grado #{current_user.course.number}°"
+  .card-body.levels-body
+    .levels-header
       .text-left Código
       .text-left Grado
       .text-left Lectura

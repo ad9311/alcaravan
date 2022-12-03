@@ -4,7 +4,7 @@
   .card-body.grid.grid-cols-1.gap-5
     .overflow-y-auto{ class: "max-h-[400px]" }
       - @comments.each do |comment|
-        - course = " curso #{comment.user.my_course.number}°" if comment.user.student? 
+        - course = " curso #{comment.user.my_course.number}°" if comment.user.student?
         .comment.my-2
           .flex.items-center.justify-between
             .comment-title.underline.text-neutral-3= "#{comment.user.full_name.capitalize.capitalize.titleize}  (#{t(comment.user.role)}#{course})"
