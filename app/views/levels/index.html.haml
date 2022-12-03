@@ -1,8 +1,8 @@
 .card
   .card-body
-    .card-header
-      %h2= "Niveles y Guías Grado #{current_user.course.number}°"
-      = image_tag "course_#{current_user.course.number}.svg", class: "ml-2 icon"
+    .card-header.flex.items-center
+      %h2.text-3xl.comic Niveles y Guías Grado
+      = image_tag "course_#{current_user.course.number}.svg", class: "ml-1 icon"
     .levels-body
       .levels-header
         .text-left Código

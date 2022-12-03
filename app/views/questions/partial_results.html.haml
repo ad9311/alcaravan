@@ -2,7 +2,7 @@
   .card-body
     .con
       .card-header.text-center
-        %h1.text-xl= "Resultados del nivel #{@level.number}"
+        %h1.comic.text-3xl= "Resultados del nivel #{@level.number}"
       .mt-5.flex.flex-col.items-center.opacity-0#results
         .text-center
           %p.mb-3.text-xl= "Preguntas correctas: #{@correct_answers}/5"
@@ -11,18 +11,24 @@
             = image_tag "good.svg", alt: 'globo', class: 'balloon'
             = image_tag "llanerito.png", class: "boy", id: "alcaravan"
           #good
-          %p.text-xl.mb-5 ¡Muy bien haz logrado avanzar!
-          = link_to 'Siguiente', discover_path(id: @level), class: "btn btn-primary w-fit"
+          %p.text-xl.my-5¡Muy bien haz logrado avanzar!
+          = link_to discover_path(id: @level), class: "w-fit text-center link-2" do
+            = image_tag "next.svg", class: "icon m-auto"
+            %span.text-xs.font-bold.text-indigo-600 Siguiente
         - else
           #bad
           .balloon
           .image-llanerito
             = image_tag "#{@level.code}.svg", alt: 'globo', class: 'balloon'
             = image_tag "llanerito.png", class: "boy", id: "alcaravan"
-          %p.text-xl.mb-5 ¡Vuelve a intentarlo, puedes lograrlo!
-          = button_to 'Reintentar', reset_level_path(id: @level), method: :delete, class: "btn btn-primary w-fit"
+          %p.text-xl.my-5 ¡Vuelve a intentarlo, puedes lograrlo!
+          = button_to reset_level_path(id: @level), class: "w-fit text-center link-2", method: :delete do
+            = image_tag "next.svg", class: "icon m-auto"
+            %span.text-xs.font-bold.text-indigo-600 Siguiente
       .mt-5.flex.justify-center
-        %button{:onclick => "showResults()", class: "btn btn-primary w-fit", id: "display-results"} Descubrir resultados
+        %button{:onclick => "showResults()", class: "w-fit text-center link-2", id: "display-results"}
+          = image_tag "question.svg", class: "icon m-auto"
+          %span.text-xs.font-bold.text-indigo-600 Descubrir resultados
 :javascript
   function showResults() {
     document.getElementById('results').classList.replace('opacity-0', 'opacity-1');

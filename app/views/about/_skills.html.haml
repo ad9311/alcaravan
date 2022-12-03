@@ -22,5 +22,9 @@
         %p= t("about.quality_references.course_2.bullet_#{i}")
 
 .mt-5.flex.justify-between
-  = button_to "Atrás", about_paginate_path(page: "justification"), class: "btn-secondary"
-  = button_to "Siguiente", about_paginate_path(page: "authors"), class: "btn-secondary"
+  = button_to about_paginate_path(page: "justification"), class: "w-fit text-center link-2" do
+    = image_tag "back.svg", class: "icon m-auto"
+    %span.text-xs.font-bold.text-indigo-600 Atrás
+  = button_to about_paginate_path(page: "authors"), class: "w-fit text-center link-2" do
+    = image_tag "next.svg", class: "icon m-auto"
+    %span.text-xs.font-bold.text-indigo-600 Siguiente

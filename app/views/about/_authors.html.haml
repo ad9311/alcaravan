@@ -19,4 +19,6 @@
       %p.list-disc.text-lg.comic.text-center.underline= t("about.authors.author_2.email")
       %p.list-disc.text-lg.comic.text-center= t("about.authors.author_2.contact_number")
 .mt-5.flex.justify-start
-  = button_to "Atrás", about_paginate_path(page: "skills"), class: "btn-secondary"
+  = button_to about_paginate_path(page: "skills"), class: "w-fit text-center link-2" do
+    = image_tag "back.svg", class: "icon m-auto"
+    %span.text-xs.font-bold.text-indigo-600 Atrás

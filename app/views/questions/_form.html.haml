@@ -23,7 +23,7 @@
   %h2.mb-5.text-lg.question-level.font-bold.text-neutral-3#question= "(#{question.number}) - #{question.text.html_safe}"
   = form_with model: question, url: @answer.nil? ? submit_question_path : resubmit_question_path, method: @answer.nil? ? :post : :patch do |f|
     = f.hidden_field :id
-    .font-bold= question.correct_answer
+    -# .font-bold= question.correct_answer
     - question.options.each_pair do |k, v|
       .form-fields.mb-5
         %span.font-bold.text-neutral-3.pr-1= "(#{k.upcase})"
@@ -34,8 +34,13 @@
         = f.label :answer, v.html_safe, class: "pl-1 #{'question-option' if question.code == 'Q1L1C3' || question.code == 'Q2L1C5'}"
     .mt-5.flex.justify-center
       - unless question.code.include?('Q1L1')
-        = link_to 'Atrás', previous_question_path(id: question), class: 'btn btn-primary w-fit'
-      = f.submit 'Siguiente', class: 'ml-3 btn btn-primary w-fit'
+        = link_to previous_question_path(id: question), class: "mr-12 w-fit text-center link-2" do
+          = image_tag "back.svg", class: "icon m-auto"
+          %span.text-xs.font-bold.text-indigo-600 Atrás
+      %button.w-fit.text-center.relative.link-2{type: "button"}
+        = f.submit "", class: "absolute top-0 bottom-0 w-full cursor-pointer"
+        = image_tag "next.svg", class: "icon m-auto"
+        %span.text-xs.font-bold.text-indigo-600 Siguiente
 #number.opacity-0= question.number
 :javascript
   setTimeout(() => {
