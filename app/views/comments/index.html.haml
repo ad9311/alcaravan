@@ -1,7 +1,7 @@
 .card
   .card-body.grid.grid-cols-1.gap-5
     .card-header.text-center.relative
-      %h1.text-center.comic.font-bold.text-4xl.mb-16.relative.z-10= "Foro #{current_user.user_course}"
+      %h1.text-center.comic.text-4xl.mb-16.relative.z-10= "Foro #{current_user.user_course}"
       .class-number
         = image_tag "chat.svg", class: "w-[100px]"
     .overflow-y-auto.py-5{ class: "max-h-[400px]" }

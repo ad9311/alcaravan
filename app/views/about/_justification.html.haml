@@ -10,5 +10,9 @@
       %li.mb-3
         %p.text-justify.text-2xl.mb-8= t("about.justification.parragraph_#{i}")
 .mt-5.flex.justify-between
-  = button_to "Atrás", about_paginate_path(page: "presentation"), class: "btn-secondary"
-  = button_to "Siguiente", about_paginate_path(page: "skills"), class: "btn-secondary"
+  = button_to about_paginate_path(page: "presentation"), class: "w-fit text-center link-2" do
+    = image_tag "back.svg", class: "icon m-auto"
+    %span.text-xs.font-bold.text-indigo-600 Atrás
+  = button_to about_paginate_path(page: "skills"), class: "w-fit text-center link-2" do
+    = image_tag "next.svg", class: "icon m-auto"
+    %span.text-xs.font-bold.text-indigo-600 Siguiente

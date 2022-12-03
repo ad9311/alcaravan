@@ -1,5 +1,8 @@
 .card
   .card-body
     .con
-      .card-header.text-center
-        %h1 ¡Felicidades, has terminado todo el curso!
+      .card-header
+        .flex.item-center.justify-center
+          = image_tag "smiley.svg", class: "mr-2 icon"
+          %h1 ¡Felicidades, has terminado todo el curso!
+          = image_tag "trophy.svg", class: "ml-2 icon"

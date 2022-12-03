@@ -1,19 +1,21 @@
 .card
-  .card-header
-    %h2= "Niveles y Guías Grado #{current_user.course.number}°"
-  .card-body.levels-body
-    .levels-header
-      .text-left Código
-      .text-left Grado
-      .text-left Lectura
-      .text-left Guía
-    -@levels.map do |level|
-      .grid.grid-cols-4.py-4.px-2.my-3.rounded.bg-neutral-2{class: 'hover:bg-neutral-1'}
-        .text-left= level.code
-        .text-left= level.course.name
-        .text-left
-          = link_to asset_path("#{level.code}.pdf", skip_pipeline: true), class: 'flex gap-4', target: '_blank' do
-            = image_tag 'pdf.svg', alt: 'Pdf icon', class: 'w-6 h-6'
-        .text-left
-          = link_to asset_path("G#{level.code}.pdf", skip_pipeline: true), class: 'flex gap-4', target: '_blank' do
-            = image_tag 'pdf.svg', alt: 'Pdf icon', class: 'w-6 h-6'
+  .card-body
+    .card-header.flex.items-center
+      %h2.text-3xl.comic Niveles y Guías Grado
+      = image_tag "course_#{current_user.course.number}.svg", class: "ml-1 icon"
+    .levels-body
+      .levels-header
+        .text-left Código
+        .text-left Grado
+        .text-left Lectura
+        .text-left Guía
+      -@levels.map do |level|
+        .grid.grid-cols-4.py-4.px-2.my-3.rounded.bg-yellow-100.border-2.border-neutral-900.text-neutral-3{class: 'hover:bg-yellow-200'}
+          .text-left= level.code
+          .text-left= level.course.name
+          .text-left
+            = link_to asset_path("#{level.code}.pdf", skip_pipeline: true), class: 'flex gap-4', target: '_blank' do
+              = image_tag 'pdf.svg', alt: 'Pdf icon', class: 'w-6 h-6'
+          .text-left
+            = link_to asset_path("G#{level.code}.pdf", skip_pipeline: true), class: 'flex gap-4', target: '_blank' do
+              = image_tag 'pdf.svg', alt: 'Pdf icon', class: 'w-6 h-6'
