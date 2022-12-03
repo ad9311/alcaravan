@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get 'error', to: 'questions#error'
 
   # Comments
-  resources :comments, only: %i[index new]
+  resources :comments, only: %i[index new create]
 
   devise_for :users, controllers: {
     registrations: "users/registrations",
