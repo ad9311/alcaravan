@@ -16,7 +16,12 @@
         = f.text_field :course_id, value: current_user.course_student.course.id
   .field.grid.grid-cols-1.gap-4
     = f.label :content, "Escribe un comentario para tus compañeros:", class: "font-bold"
-    = f.text_area :content, class: "comment-area focus:outline focus:outline-primary outline-offset-0"
+    = f.text_area :content, class: "comment-area rounded-xl", required: true
   .mt-5.flex.justify-center
-    = link_to 'Atras', comments_path, class: "btn btn-primary w-fit"
-    = f.submit 'Comentar', class: "ml-3 btn btn-primary w-fit"
+    = link_to comments_path, class: "w-fit text-center link-2" do
+      = image_tag "back.svg", class: "icon m-auto"
+      %span.text-xs.font-bold.text-indigo-600 Atrás
+    %button.ml-12.w-fit.text-center.relative.link-2{type: "button"}
+      = f.submit "", class: "absolute top-0 bottom-0 w-full cursor-pointer"
+      = image_tag "plus.svg", class: "icon m-auto"
+      %span.text-xs.font-bold.text-indigo-600 Nuevo comentario

@@ -1,14 +1,14 @@
 - if @level&.image_url
-  %div
+  .mt-28
     .image-question.text-center
       = image_tag @level.image_url, class: "m-auto"
     .image-source
       %span.italic= "Tomado de: "
       %a(href="#{@level.image_source}")= "#{@level.image_source}"
 - if @level&.video_url
-  %div
+  .mt-28
     .image-question
-      %iframe.mx-auto{allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", src: @level&.video_url, title: "YouTube video player", class: "w-full h-96"}
+      %iframe.mx-auto.border-8.border-blue-300{allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", src: @level&.video_url, title: "YouTube video player", class: "w-full h-96"}
     .image-source
       %span.italic Tomado de:
       %a(href="#{@level.video_source}")= "#{@level.video_source}"
@@ -23,7 +23,7 @@
   %h2.mb-5.text-lg.question-level.font-bold.text-neutral-3#question= "(#{question.number}) - #{question.text.html_safe}"
   = form_with model: question, url: @answer.nil? ? submit_question_path : resubmit_question_path, method: @answer.nil? ? :post : :patch do |f|
     = f.hidden_field :id
-    -# .font-bold= question.correct_answer
+    .font-bold= question.correct_answer
     - question.options.each_pair do |k, v|
       .form-fields.mb-5
         %span.font-bold.text-neutral-3.pr-1= "(#{k.upcase})"
