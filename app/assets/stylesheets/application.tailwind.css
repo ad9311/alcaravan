@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -31,11 +32,12 @@
   }
 
   .card {
-    @apply p-5 h-full relative rounded-xl bg-white border border-neutral-2;;
+    @apply p-5 h-full relative rounded-xl bg-[#5111A5] border-neutral-900 border-2;
   }
 
   .card-body {
     @apply px-5 py-3 h-full rounded-xl bg-neutral-1;
+    background-image: url('paper.png');
   }
 
   .card-header {
@@ -131,34 +133,44 @@
   }
 
   .cursive {
-    font-family: 'Satisfy', cursive;
+    font-family: 'Nabla', cursive;
   }
 
   .comic {
-    font-family: 'Comic Neue', cursive;
+    font-family: 'Nerko One', cursive;
   }
 
   .navbar {
     @apply
     w-[1200px]
-    m-auto
+    bg-orange-200
+    rounded-xl
     mt-3
-    px-5
-    py-5
+    p-3
+    m-auto
+    border-2 border-neutral-900;
+  }
+
+  .inner-navbar {
+    @apply
+    p-2
     flex
     items-center
     justify-between
-    bg-white
     rounded-xl
-    border border-neutral-2;
+    bg-gradient-to-r from-red-500 to-yellow-100;
   }
 
   .icon {
-    @apply w-6;
+    @apply w-10;
   }
 
   .link {
-    @apply flex flex-col items-center p-2 rounded-xl hover:bg-neutral-100 cursor-pointer justify-between;
+    @apply flex flex-col items-center p-2 rounded-xl hover:bg-blue-200 cursor-pointer justify-between transition-all duration-500;
+  }
+
+  .link-2 {
+    @apply flex flex-col items-center p-2 rounded-xl hover:bg-orange-300 cursor-pointer justify-between transition-all duration-500;
   }
 
   .con {
@@ -273,10 +285,7 @@
     transition: all ease-in-out 1s;
   }
   .comment {
-    /* background-color: rgb(255, 255, 255); */
-    /* border-radius: 15px; */
-    /* padding: 1.5rem; */
-    @apply bg-white p-5 mx-12 rounded-xl;
+    @apply bg-yellow-100 p-5 mx-12 rounded-xl border-2 border-neutral-900;
   }
 
   .hidden-form-comment{
@@ -289,6 +298,16 @@
   }
 
   .comment-area {
-    border: 1px solid lightgray !important;
+    @apply
+    bg-yellow-100
+    min-h-[75px];
+  }
+
+  .wave {
+    width: 30px;
+  }
+
+  .class-number {
+    @apply absolute top-0 left-[57%] rotate-12 -z-0;
   }
 }

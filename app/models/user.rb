@@ -78,10 +78,10 @@ class User < ApplicationRecord
   end
 
   def user_course
-    if self.teacher?
-      self.course_teacher.course.name
+    if teacher?
+      course_teacher.course.name
     else
-      self.course_student.course.name
+      course_student.course.name
     end
   end
 end

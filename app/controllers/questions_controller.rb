@@ -126,6 +126,6 @@ class QuestionsController < ApplicationController
   end
 
   def authenticateStudent
-    redirect_to root_path if current_user.teacher?
+    redirect_to(root_path) if current_user.teacher?
   end
 end

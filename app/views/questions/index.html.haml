@@ -1,15 +1,16 @@
 .card
   .card-body
     .con
-      .card-header
-        %h1= @course.name
-      %div
+      .card-header.text-center.relative
+        %h1.text-4xl.comic.relative.z-10= @course.name
+        .class-number
+          = image_tag "course_#{@course.number}.svg", class: "w-[100px]"
+      .text-center.mt-12
         %span Preguntas contestadas:
         %span= "#{current_user.answers(@level)}/5"
-      .flex.items-end
+        .font-bold= "Pregunta ##{@question.number} - Nivel ##{@level.number}"
+      .flex.items-center.w-fit.m-auto
         .mt-5
-          - if @question.number == "1"
-            %span.block.mr-3= link_to "Continuar", question_path(@question), class: "btn-secondary"
-          - else
-            %span.block.mr-3= link_to "Continuar", question_path(@question), class: "btn-secondary"
-        %span.block.font-bold= "Pregunta ##{@question.number} - Nivel ##{@level.number}"
+          = link_to question_path(@question), class: "w-fit text-center link-2" do
+            = image_tag "next.svg", class: "icon m-auto"
+            %span.text-xs.font-bold.text-indigo-600 Continuar
