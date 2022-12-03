@@ -144,7 +144,7 @@
     m-auto
     mt-3
     px-5
-    py-5 text-
+    py-5
     flex
     items-center
     justify-between
@@ -255,16 +255,28 @@
     transition: all ease-in-out 5s;
   }
 
-  .comment {
-    background-color: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin-left: 3rem;
-    margin-right: 3rem;
+  #results {
+    transition: all ease-in-out 3s;
   }
 
-  .comment-title {
+  .vanish {
+    opacity: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 
+  .shrink {
+    height: 25%;
+  }
+
+  #display-results {
+    transition: all ease-in-out 1s;
+  }
+  .comment {
+    /* background-color: rgb(255, 255, 255); */
+    /* border-radius: 15px; */
+    /* padding: 1.5rem; */
+    @apply bg-white p-5 mx-12 rounded-xl;
   }
 
   .hidden-form-comment{
@@ -276,8 +288,7 @@
     margin-bottom: 0.5rem;
   }
 
-  commment-area {
-    border: 1px solid lightgray;
+  .comment-area {
+    border: 1px solid lightgray !important;
   }
-
 }

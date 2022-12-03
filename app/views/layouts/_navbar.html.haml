@@ -41,7 +41,7 @@
 
   .flex.items-center
     .mr-5.flex.flex-col.items-center
-      %span.comic.font-bold= current_user.full_name.titleize
+      %span.comic.font-bold= current_user.full_name.capitalize.titleize
       %span.comic.text-xs= t(current_user.role)
     .link
       = link_to dashboard_index_path, class: "icon" do

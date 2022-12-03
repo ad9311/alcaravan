@@ -3,16 +3,43 @@
     .con
       .card-header.text-center
         %h1.text-xl= "Resultados del nivel #{@level.number}"
-      .text-center
-        %span.text-lg= "Preguntas correctas: #{@correct_answers}/5"
-      .mt-5.flex.flex-col.items-center
+      .mt-5.flex.flex-col.items-center.opacity-0#results
+        .text-center
+          %p.mb-3.text-xl= "Preguntas correctas: #{@correct_answers}/5"
         .mb-3
-          = image_tag "llanerito.png", class: "w-[100px]"
+          = image_tag "llanerito.png", class: "w-[100px]", id: "alcaravan"
         - if @correct_answers >= 4
-          %p.mb-5 ¡Muy bien haz logrado avanzar!
-          = link_to 'Siguiente', discover_path(id: @level), class: "btn-secondary"
+          #good
+          %p.text-xl.mb-5 ¡Muy bien haz logrado avanzar!
+          = link_to 'Siguiente', discover_path(id: @level), class: "btn btn-primary w-fit"
         - else
+          #bad
           .balloon
             = image_tag "#{@level.code}.svg", alt: 'globo', class: ''
-          %p.mb-5 ¡Vuelve a intentarlo, puedes lograrlo!
-          = button_to 'Reintentar', reset_level_path(id: @level), method: :delete, class: "btn-secondary"
+          %p.text-xl.mb-5 ¡Vuelve a intentarlo, puedes lograrlo!
+          = button_to 'Reintentar', reset_level_path(id: @level), method: :delete, class: "btn btn-primary w-fit"
+      .mt-5.flex.justify-center
+        %button{:onclick => "showResults()", class: "btn btn-primary w-fit", id: "display-results"} Descubrir resultados
+:javascript
+  function showResults() {
+    document.getElementById('results').classList.replace('opacity-0', 'opacity-1');
+    const displayResults = document.getElementById('display-results');
+    displayResults.classList.add('vanish');
+    setTimeout(() => { 
+      displayResults.classList.add('shrink');
+      displayResults.remove();
+    }, 1000);
+    if (!document.getElementById('audio')) {
+      const audio = document.createElement('audio');
+      if (document.getElementById('good')) {
+        audio.setAttribute('src', 'good.mp3');
+      } else {
+        audio.setAttribute('src', 'bad.mp3');
+      }
+      audio.setAttribute('autoplay', 'autoplay');
+      audio.setAttribute('muted', 'muted');
+      audio.id = 'audio';
+      document.body.appendChild(audio);
+      audio.play();
+    }
+  }
