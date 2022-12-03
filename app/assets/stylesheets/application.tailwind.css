@@ -289,7 +289,7 @@
   }
 
   .hidden-form-comment{
-    display: none;
+    @apply hidden;
   }
 
   .comment-content {
@@ -309,5 +309,25 @@
 
   .class-number {
     @apply absolute top-0 left-[57%] rotate-12 -z-0;
+  }
+
+  .levels-header {
+    @apply grid grid-cols-4 font-semibold text-base py-4;
+  }
+
+  .levels-body {
+    @apply px-60;
+  }
+
+  .image-llanerito {
+    @apply flex justify-center flex-col;
+  }
+
+  .image-llanerito .balloon {
+    @apply w-[30rem];
+  }
+
+  .image-llanerito .boy{
+    @apply w-40;
   }
 }
