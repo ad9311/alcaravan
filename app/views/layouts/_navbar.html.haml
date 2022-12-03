@@ -1,49 +1,52 @@
 .navbar
-  = link_to root_path do
-    .flex.items-center
-      .rounded-full.border.border-primary
-        = image_tag "birdIcon.svg", class: "w-12"
-      .ml-3.pt-2
-        %span.font-bold.cursive.text-3xl Alcaraván
-  %div
-    - if current_user.student?
-      %ul.grid.grid-cols-3
-        %li.link.self-end
-          = link_to about_index_path, class: "mt-1 text-xs text-neutral-500" do
-            = image_tag "home.svg", class: "icon mx-auto"
-            %span= "Inicio"
-        %li.link.self-end
-          = link_to questions_path, class: "mt-1 text-xs text-neutral-500" do
-            = image_tag "book.svg", class: "icon mx-auto"
-            %span= "Preguntas"
-        %li.link.self-end
-          = link_to comments_path, class: "mt-1 text-xs text-neutral-500" do
-            = image_tag "text.svg", class: "icon mx-auto"
-            %span= "Foro"
-    - else
-      %ul.grid.grid-cols-2
-        %li.link.self-end
-          = link_to about_index_path, class: "mt-1 text-xs text-neutral-500" do
-            = image_tag "home.svg", class: "icon mx-auto"
-            %span= "Inicio"
-        %li.link.self-end
-          = link_to students_path, class: "mt-1 text-xs text-neutral-500" do
-            = image_tag "student.svg", class: "icon w-[2rem] mx-auto"
-            %span= "Alumnos"
-        %li.link.self-end
-          = link_to levels_path, class: "mt-1 text-xs text-neutral-500" do
-            = image_tag "text.svg", class: "icon mx-auto"
-            %span= "Lecturas"
-        %li.link.self-end
-          = link_to comments_path, class: "mt-1 text-xs text-neutral-500" do
-            = image_tag "text.svg", class: "icon mx-auto"
-            %span= "Foro"
+  .inner-navbar
+    = link_to root_path do
+      .flex.items-center
+        .rounded-full.border.border-primary
+          = image_tag "birdIcon.svg", class: "w-12"
+        .ml-3.pt-2
+          %span.font-bold.cursive.text-3xl Alcaraván
+    %div
+      - if current_user.student?
+        %ul.grid.grid-cols-3.gap-3
+          %li.link.self-end
+            = link_to about_index_path, class: "mt-1 text-center text-xs text-neutral-500" do
+              = image_tag "home.svg", class: "icon mx-auto"
+              %span.text-indigo-600.font-bold= "Inicio"
+          %li.link.self-end
+            = link_to questions_path, class: "mt-1 text-center text-xs text-neutral-500" do
+              = image_tag "book.svg", class: "icon mx-auto"
+              %span.text-indigo-600.font-bold= "Preguntas"
+          %li.link.self-end
+            = link_to comments_path, class: "mt-1 text-center text-xs text-neutral-500" do
+              = image_tag "forum.svg", class: "icon mx-auto"
+              %span.text-indigo-600.font-bold= "Foro"
+      - else
+        %ul.grid.grid-cols-2.gap-3
+          %li.link.self-end
+            = link_to about_index_path, class: "mt-1 text-xs text-neutral-500" do
+              = image_tag "home.svg", class: "icon mx-auto"
+              %span= "Inicio"
+          %li.link.self-end
+            = link_to students_path, class: "mt-1 text-xs text-neutral-500" do
+              = image_tag "student.svg", class: "icon w-[2rem] mx-auto"
+              %span= "Alumnos"
+          %li.link.self-end
+            = link_to levels_path, class: "mt-1 text-xs text-neutral-500" do
+              = image_tag "text.svg", class: "icon mx-auto"
+              %span= "Lecturas"
+          %li.link.self-end
+            = link_to comments_path, class: "mt-1 text-xs text-neutral-500" do
+              = image_tag "forum.svg", class: "icon mx-auto"
+              %span= "Foro"
 
-  .flex.items-center
-    .mr-5.flex.flex-col.items-center
-      %span.comic.font-bold= current_user.full_name.capitalize.titleize
-      %span.comic.text-xs= t(current_user.role)
-    .link
-      = link_to dashboard_index_path, class: "icon" do
-        = image_tag "logout.svg"
-        %span.text-xs.text-neutral-500 Salir
+    .flex.items-center
+      .mr-5.flex.items-center
+        .rounded-full.w-fit.p-2.mr-2
+          = image_tag "waving.svg", class: "wave"
+        %span.comic.text-2xl.text-red-500= "¡Hola #{current_user.full_name.capitalize.titleize}!"
+        -# %span.comic.text-xs= t(current_user.role)
+      .link
+        = link_to dashboard_index_path, class: "text-center icon" do
+          = image_tag "logout.svg"
+          %span.text-xs.text-red-600.font-bold Salir
