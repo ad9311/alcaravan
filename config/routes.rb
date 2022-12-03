@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  resources :comments
   root 'about#index'
 
   # Dashboard
   resources :dashboard, only: %i[index]
+
+  # Students
   resources :students
+
+  # Levels
   resources :levels
   get "download_pdf", to: "levels#download_pdf"
 
@@ -22,6 +25,9 @@ Rails.application.routes.draw do
   get 'discover', to: 'questions#discover'
   get 'results', to: 'questions#results'
   get 'error', to: 'questions#error'
+
+  # Comments
+  resources :comments, only: %i[index new]
 
   devise_for :users, controllers: {
     registrations: "users/registrations",
