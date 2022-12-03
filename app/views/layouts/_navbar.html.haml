@@ -11,42 +11,42 @@
         %ul.grid.grid-cols-3.gap-3
           %li.link.self-end
             = link_to about_index_path, class: "mt-1 text-center text-xs" do
-              = image_tag "home.svg", class: "icon mx-auto"
+              = image_tag "home.svg", class: "icon mx-auto animated-icon"
               %span.text-indigo-600.font-bold= "Inicio"
           %li.link.self-end
             = link_to questions_path, class: "mt-1 text-center text-xs" do
-              = image_tag "book.svg", class: "icon mx-auto"
+              = image_tag "book.svg", class: "icon mx-auto animated-icon"
               %span.text-indigo-600.font-bold= "Preguntas"
           %li.link.self-end
             = link_to comments_path, class: "mt-1 text-center text-xs" do
-              = image_tag "forum.svg", class: "icon mx-auto"
+              = image_tag "forum.svg", class: "icon mx-auto animated-icon"
               %span.text-indigo-600.font-bold= "Foro"
       - else
         %ul.grid.grid-cols-4.gap-3
           %li.link.self-end
             = link_to about_index_path, class: "mt-1 text-center text-xs" do
-              = image_tag "home.svg", class: "icon mx-auto"
+              = image_tag "home.svg", class: "icon mx-auto animated-icon animated-icon-step"
               %span.text-indigo-600.font-bold= "Inicio"
           %li.link.self-end
             = link_to students_path, class: "mt-1 text-center text-xs" do
-              = image_tag "pencil.svg", class: "icon w-[2rem] mx-auto"
+              = image_tag "pencil.svg", class: "icon w-[2rem] mx-auto animated-icon animated-icon-step"
               %span.text-indigo-600.font-bold= "Alumnos"
           %li.link.self-end
             = link_to levels_path, class: "mt-1 text-center text-xs" do
-              = image_tag "document.svg", class: "icon mx-auto"
+              = image_tag "document.svg", class: "icon mx-auto animated-icon animated-icon-step"
               %span.text-indigo-600.font-bold= "Lecturas"
           %li.link.self-end
             = link_to comments_path, class: "mt-1 text-center text-xs" do
-              = image_tag "forum.svg", class: "icon mx-auto"
+              = image_tag "forum.svg", class: "icon mx-auto animated-icon animated-icon-step"
               %span.text-indigo-600.font-bold= "Foro"
 
     .flex.items-center
       .mr-5.flex.items-center
         .rounded-full.w-fit.p-2.mr-2
-          = image_tag "waving.svg", class: "wave"
-        %span.comic.text-2xl.text-red-500= "¡Hola #{current_user.full_name.capitalize.titleize}!"
+          = image_tag "waving.svg", class: "wave animated-icon"
+        %span.greeting{style: "animation: typing 2s steps(#{current_user.full_name.length + 5}), blink 1s infinite step-end alternate; width: #{current_user.full_name.length + 5}ch;"}= "¡Hola #{current_user.full_name.capitalize.titleize}!"
         -# %span.comic.text-xs= t(current_user.role)
       .link
-        = link_to dashboard_index_path, class: "text-center icon" do
+        = link_to dashboard_index_path, class: "text-center icon animated-icon" do
           = image_tag "logout.svg"
           %span.text-xs.text-red-600.font-bold Salir
