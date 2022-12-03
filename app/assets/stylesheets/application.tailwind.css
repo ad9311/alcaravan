@@ -285,7 +285,7 @@
     transition: all ease-in-out 1s;
   }
   .comment {
-    @apply bg-yellow-100 p-5 mx-12 rounded-xl border-2 border-neutral-900;
+    @apply bg-yellow-100 p-5 mx-12 rounded-xl border-2 border-neutral-900 hover:bg-yellow-200;
   }
 
   .hidden-form-comment{
@@ -300,6 +300,7 @@
   .comment-area {
     @apply
     bg-yellow-100
+    hover:bg-yellow-200
     min-h-[75px];
   }
 

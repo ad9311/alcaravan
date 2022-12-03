@@ -1,7 +1,7 @@
 .card
-  .card-header
-    %h2= "Estudiantes #{current_user.course.name}"
   .card-body
+    .card-header
+      %h2= "Estudiantes #{current_user.course.name}"
     .grid.grid-cols-12.font-semibold.text-base.py-4
       .col-span-4.text-left Nombre
       .col-span-2.text-left Nivel 1
@@ -9,7 +9,7 @@
       .col-span-2.text-left Nivel 3
       .col-span-2.text-left Nivel 4
     -@students.map do |student|
-      .grid.grid-cols-12.py-4.px-2.my-3.rounded.bg-neutral-2{class: 'hover:bg-neutral-1'}
+      .grid.grid-cols-12.py-4.px-2.my-3.rounded.bg-yellow-100.border-2.border-neutral-900.text-neutral-3{class: 'hover:bg-yellow-200'}
         .col-span-4.text-left= student.full_name.capitalize
         - student.course_student.course.levels.each do |level|
           -if student.answers(level) > 0

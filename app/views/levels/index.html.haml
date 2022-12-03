@@ -1,13 +1,14 @@
 .card
-  .card-header
-    %h2= "Niveles #{current_user.course.name}"
   .card-body
+    .card-header
+      %h2= "Niveles #{current_user.course.name}"
+      = image_tag "course_#{current_user.course.number}.svg", class: "ml-2 icon"
     .grid.grid-cols-12.font-semibold.text-base.py-4
       .col-span-2.col-start-3.text-left Codigo
       .col-span-2.text-left Grado
       .col-span-2.text-left PDF
     -@levels.map do |level|
-      .grid.grid-cols-12.py-4.px-2.my-3.rounded.bg-neutral-2{class: 'hover:bg-neutral-1'}
+      .grid.grid-cols-12.py-4.px-2.my-3.rounded.bg-yellow-100.border-2.border-neutral-900.text-neutral-3{class: 'hover:bg-yellow-200'}
         .col-span-2.col-start-3.text-left= level.code
         .col-span-2.text-left= level.course.name
         .col-span-2.text-left
