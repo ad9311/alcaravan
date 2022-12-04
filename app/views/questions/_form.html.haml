@@ -7,12 +7,20 @@
       %a(href="#{@level.image_source}")= "#{@level.image_source}"
 - if @level&.video_url
   -# .text-3xl= @level&.video_url
-  .mt-28
-    .image-question
-      %iframe.mx-auto.border-8.border-blue-300{allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", src: @level&.video_url, title: "YouTube video player", class: "w-full h-96"}
-    .image-source
-      %span.italic Tomado de:
-      %a(href="#{@level.video_source}")= "#{@level.video_source}"
+  -if @level.code == 'L1C5' || @level.code == 'L1C3'
+    .mt-28
+      .image-question
+        %iframe{:allow => "autoplay", :height => "480", :src => "#{@level.video_url}", class: "w-full" }
+      .image-source
+        %span.italic Tomado de:
+        %a(href="#{@level.video_source}")= "#{@level.video_source}"
+  -else
+    .mt-28
+      .image-question
+        %iframe.mx-auto.border-8.border-blue-300{allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", src: @level&.video_url, title: "YouTube video player", class: "w-full h-96"}
+      .image-source
+        %span.italic Tomado de:
+        %a(href="#{@level.video_source}")= "#{@level.video_source}"
 - if @level&.text
   .mt-10
     %div{ class: "#{@level.code == 'L2C5'|| @level.code == 'L2C3' ? 'lyrics' : 'text-question' }"}

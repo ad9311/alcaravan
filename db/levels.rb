@@ -2,10 +2,12 @@ Level.destroy_all
 
 Level.create(
   code: 'L1C5',
-  image_source: 'https://elrinconcolombiano.com/leyenda-de-juan-machete/',
-  image_url: 'https://elrinconcolombiano.com/wp-content/uploads/2021/11/Leyenda-de-Juan-Machete.jpg',
+  # image_source: 'https://elrinconcolombiano.com/leyenda-de-juan-machete/',
+  # image_url: 'https://elrinconcolombiano.com/wp-content/uploads/2021/11/Leyenda-de-Juan-Machete.jpg',
   text: '<span>La leyenda de Juan Machete</span><span></span><span>Cuenta la leyenda que Juan Machete era en vida un hombre llamado Juan Francisco Ortiz, el cual era dueño de algunos terrenos en la Macarena en el Departamento de Arauca; era un hombre ambicioso y adquirió el apodo o sobrenombre de “Juan Machete” debido a que pasaba todo el tiempo con un machete en la cintura, dicho machete lo había mandado a hacer adaptado a su gran estatura, de igual forma era conocido en la región por su gran manejo del mismo.</span><span></span><span>La ambición de Juan machete lo llevo a realizar un pacto con el diablo ofreciendo su alma y la de su mujer e hijos a cambio de riquezas, para ello tomo un sapo y una gallina negra y les cosió los ojos y los enterró vivos a la media noche de un jueves santo; al año siguiente el mismo día y a la misma hora los desenterró y luego se dirigió a un lugar solitario donde tiro los huesos al viento e invoco al diablo, allí se le apareció el maligno, quien acepto el pacto. A partir de ese momento a Juan machete le empezó a ir bien en todo lo que hacía, sus terrenos se convirtieron en los más fértiles, las vacas le parían de a dos terneros, su fortuna fue creciendo más y más.</span><span></span><span>Un día un gran toro negro apareció en sus terrenos, destacaba por su gran tamaño y sus mugidos estrepitosos, al principio no le prestó atención ya que pensó que sería el toro de algún vecino, pero al día siguiente se encontró con una cabra (chivo) que le hablo, esta le indico que a su hacienda llegarían unos trabajadores que debía contratar, estos irían comandados por un hombre al que él debía bautizar como constantinoplo, debía realizar el bautizo rezando un credo al revés, Juan Machete hizo lo que esta le indico y sus hombres se encargaron de hacerlo el más rico de toda la región, pero también el más abusivo y tirano, se encargó de apropiarse de las tierras de sus vecinos y de imponerse en la región.</span><span></span><span>Luego de varios años de buena fortuna Juan Machete empezó a recibir señales de que el día de pagar su deuda con el diablo estaba cerca, una gran sequía golpeo la región y todo su ganado murió, todo, excepto el toro negro, su familia lo abandonó al igual que todos sus hombres, su gran casa fue consumida por un inesperado incendio.</span><span></span><span>Así que asustado y arrepentido tomo toda la riqueza que aún le quedaba y las junto en cofres que escondió en una cueva subterránea dentro del bosque, en ese lugar se quedó custodiando el tesoro hasta que murió y fue ante el diablo a pagar su deuda. Juan machete regreso en forma de espectro (espanto) custodiando el tesoro que enterró y persiguiendo con su gran machete a todo el que intenta tomarlo.</span>',
   text_source: 'https://elrinconcolombiano.com/leyenda-de-juan-machete/',
+  video_source: 'https://drive.google.com/file/d/13S1Mnlw4zQEtqBPykTh1M8fzfmDgC2Jb/preview',
+  video_url: 'https://drive.google.com/file/d/13S1Mnlw4zQEtqBPykTh1M8fzfmDgC2Jb/preview',
   course: Course.all.find_by(code: 'C5A')
 )
 
@@ -34,10 +36,12 @@ Level.create(
 
 Level.create(
   code: 'L1C3',
-  image_source: 'https://elrinconcolombiano.com/leyenda-la-candileja-o-bola-de-fuego/',
-  image_url: 'https://elrinconcolombiano.com/wp-content/uploads/2021/03/Mito-o-Leyenda-de-la-candileja-o-la-bola-de-Fuego-1024x577.jpg',
+  # image_source: 'https://elrinconcolombiano.com/leyenda-la-candileja-o-bola-de-fuego/',
+  # image_url: 'https://elrinconcolombiano.com/wp-content/uploads/2021/03/Mito-o-Leyenda-de-la-candileja-o-la-bola-de-Fuego-1024x577.jpg',
   text: '<span>La bola de fuego</span><span></span><span>La Candileja o la Bola fuego fue en vida una anciana que malcriaba a más no poder a sus dos nietos los cuales eran mal educados, groseros y crueles con su propia abuela.</span><span></span><span>Los dos nietos pasaban todo el día saltando de un lado a otro, rompiendo objetos y muebles del hogar, haciéndole travesuras humillantes a la anciana, una de esas humillantes travesuras fue pedirle a su abuela que se pusiese en cuatro patas y actuase para ellos como una mula o caballo de carga, para después montarla, la anciana con tal de complacerlos accedió y estos la ensillaron y estuvieron todo el día sobre la espalda de la pobre anciana, cuando la mujer murió y llego a rendir cuentas al cielo, san Pedro la recibió enojado y le regaño y critico la poca falta de dureza en la educación para con sus nietos y por ello le condeno a purgar sus penas en el mundo en forma de tres bolas de fuego que poseen tentáculos llameantes, las tres bolas de fuego representan el cuerpo de la anciana y sus dos nietos.</span>',
   text_source: "https://elrinconcolombiano.com/leyenda-la-candileja-o-bola-de-fuego/",
+  video_source: 'https://drive.google.com/file/d/12A71Ya5YZDaPjDGDF78h8eYQthu2Ecg5/preview',
+  video_url: 'https://drive.google.com/file/d/12A71Ya5YZDaPjDGDF78h8eYQthu2Ecg5/preview',
   course: Course.all.find_by(code: 'C3A')
 )
 
