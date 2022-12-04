@@ -11,12 +11,12 @@
       -else
         - @comments.order(created_at: :desc).each do |comment|
           - course = " curso #{comment.user.my_course.number}°" if comment.user.student?
-          .comment.my-2
+          .comment.my-2.relative
             .flex.items-center.justify-between
               .comment-title.underline.text-neutral-3= "#{comment.user.full_name.capitalize.capitalize.titleize}  (#{t(comment.user.role)}#{course})"
               .flex.items-center
                 = render "likes/form", comment: comment
-                .text-xs= "#{comment.created_at.strftime('%m/%d/%Y')}"
+            .text-xs.absolute.bottom-1.right-2= "#{comment.created_at.strftime('%m/%d/%Y')}"
             .comment-content= comment.content
     = link_to new_comment_path, class: "ml-12 w-fit text-center link-2" do
       = image_tag "plus.svg", class: "icon m-auto animated-plus"
