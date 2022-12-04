@@ -1,0 +1,17 @@
+= turbo_frame_tag comment do
+  - unless comment.nil?
+    - liked = current_user.comment_liked?(comment)
+    .likes.mr-3
+      = form_with model: Like.new, url: liked ? destroy_like_path : create_like_path, method: liked ? :delete : :post do |f|
+        - if liked
+          = f.hidden_field :id, value: liked.id
+        - else
+          = f.hidden_field :comment_id, value: comment.id
+        .flex.items-center
+          %button.mr-2.text-center.relative{type: "button"}
+            = f.submit "", class: "absolute top-0 bottom-0 left-0 w-full cursor-pointer"
+            - if liked
+              = image_tag "filled_heart", class: "w-[24px] m-auto"
+            - else
+              = image_tag "empty_heart", class: "w-[24px] m-auto"
+          %span.text-lg= comment.likes.count

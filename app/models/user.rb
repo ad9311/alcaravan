@@ -37,6 +37,7 @@ class User < ApplicationRecord
   has_one :course_teacher, dependent: :destroy
   has_one :course, through: :course_teacher, source: :course
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   enum role: {
     student: 0,
@@ -83,5 +84,9 @@ class User < ApplicationRecord
     else
       course_student.course.name
     end
+  end
+
+  def comment_liked?(comment)
+    comment.likes.find_by(user_id: id)
   end
 end
