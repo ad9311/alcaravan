@@ -11,9 +11,9 @@
           %button.mr-2.text-center.relative{type: "button", onclick: "playAudio()"}
             = f.submit "", class: "absolute top-0 bottom-0 left-0 w-full cursor-pointer"
             - if liked
-              = image_tag "filled_heart", class: "w-[24px] m-auto"
+              = image_tag "filled_heart.svg", class: "w-[24px] m-auto"
             - else
-              = image_tag "empty_heart", class: "w-[24px] m-auto"
+              = image_tag "empty_heart.svg", class: "w-[24px] m-auto"
           %span.text-lg= comment.likes.count
 :javascript
     console.log('Load');
