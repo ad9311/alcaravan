@@ -15,7 +15,7 @@
       .field
         = f.text_field :course_id, value: current_user.course_student.course.id
   .field.grid.grid-cols-1.gap-4
-    = f.label :content, "Escribe un comentario para tus compañeros:", class: "font-bold"
+    = f.label :content, "Publica un nuevo comentario:", class: "font-bold"
     = f.text_area :content, class: "comment-area rounded-xl", required: true
   .mt-5.flex.justify-center
     = link_to comments_path, class: "w-fit text-center link-2" do
@@ -24,4 +24,4 @@
     %button.ml-12.w-fit.text-center.relative.link-2.animated-plus-new-commnet{type: "button"}
       = f.submit "", class: "absolute top-0 bottom-0 w-full cursor-pointer animated-plus"
       = image_tag "plus.svg", class: "icon m-auto"
-      %span.text-xs.font-bold.text-indigo-600 Nuevo comentario
+      %span.text-xs.font-bold.text-indigo-600 Publicar
