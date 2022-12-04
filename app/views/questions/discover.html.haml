@@ -7,7 +7,10 @@
           %h1.mb-3.text-3xl.text-center.comic ¡Felicidades has terminado!
           = image_tag "discover_L#{@level.number}.png", class: "m-auto opacity-0", id: "alcaravan"
         - else
-          = image_tag "discover_L#{@level.number}.png", class: "m-auto"
+          - if @level.number == "1"
+            %iframe{:allow => "autoplay", :height => "480", :src => "https://drive.google.com/file/d/18QMz07l--6etSysMepnfR-dWqyKSv8K8/preview", class: "w-full" }
+          - else 
+            = image_tag "discover_L#{@level.number}.png", class: "m-auto"
 
       .image-source
         - unless @next_question.nil?

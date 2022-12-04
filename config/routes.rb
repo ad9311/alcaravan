@@ -30,6 +30,10 @@ Rails.application.routes.draw do
   # Comments
   resources :comments, only: %i[index new create]
 
+  # Likes
+  post 'create_like', to: 'likes#create'
+  delete 'destroy_like', to: 'likes#destroy'
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: 'users/sessions'

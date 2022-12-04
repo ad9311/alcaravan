@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_02_133733) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_03_234303) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,6 +65,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_133733) do
     t.index ["course_id"], name: "index_levels_on_course_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "comment_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_likes_on_comment_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "question_answers", force: :cascade do |t|
     t.bigint "question_id", null: false
     t.bigint "user_id", null: false
@@ -112,6 +121,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_133733) do
   add_foreign_key "course_teachers", "courses"
   add_foreign_key "course_teachers", "users"
   add_foreign_key "levels", "courses"
+  add_foreign_key "likes", "comments"
+  add_foreign_key "likes", "users"
   add_foreign_key "question_answers", "questions"
   add_foreign_key "question_answers", "users"
   add_foreign_key "questions", "levels"
