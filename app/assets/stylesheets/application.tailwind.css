@@ -47,6 +47,10 @@
     @apply pt-4 pb-6;
   }
 
+  .card-description {
+    @apply comic px-14 text-xl ;
+  }
+
   .r-shadow {
     box-shadow: 0 0 0.5rem 0.25rem rgb(224, 224, 224);
   }

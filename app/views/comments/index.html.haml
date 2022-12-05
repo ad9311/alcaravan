@@ -4,6 +4,12 @@
       %h1.text-center.comic.text-4xl.mb-16.relative.z-10= "Foro #{current_user.user_course}"
       .class-number
         = image_tag "chat.svg", class: "w-[100px]"
+    -if current_user.student?
+      .card-description
+        %p Hola amiguito aquí puedes dejar tus comentarios sobre nuestro LIM el Alcaravan.
+    -else
+      .card-description
+        %p Profe, recuerda que en este foro puedes hacerles recomendaciones a tus estudiantes, además puedes compartir material didáctico que desees haga parte de nuestro LIM en próximas ediciones.
     .overflow-y-auto.py-5{ class: "max-h-[400px]" }
       - if @comments.blank?
         .py-20.text-center
